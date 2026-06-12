@@ -1,0 +1,32 @@
+[params]
+    keywords = "Besteck, Flugzeugbesteck, Firmenbesteck, Geklautes Besteck"
+    description = ""
+    copyrightYears = "MMXXVI"
+    cc = false
+    disableScale = true
+    debug = false
+    useragent = "HugoBot/1.0 (https://flugzeugbesteck.projektemacher.org/; User:CMahnke)"
+
+    [params.print]
+      relative = 1
+
+    [params.preview]
+        outputPrefix = "ogPreview"
+        outputSuffix = ".jpg"
+        format =  "svg"
+        image = "front.png"
+        source = "file"
+        [params.preview.size]
+            height = 630
+            width = 1200
+        [params.preview.svg]
+            template = "./Source Files/Other/preview-template.svg"
+            removeMissing = true
+
+    [params.footer]
+        privacy = true
+
+[params.author]
+    email = 'mail@christianmahnke.de'
+    name = 'Christian Mahnke'
+    uri = 'http://www.wikidata.org/entity/Q137668638'
