@@ -16,7 +16,7 @@ fi
 convert "Source Files/Images/logo.svg" static/images/flugzeugbesteck.png
 
 # Generate Previews
-./themes/projektemacher-base/scripts/preview.sh
+#./themes/projektemacher-base/scripts/preview.sh
 
 #NPM dependencies
 echo "Calling theme scripts"
