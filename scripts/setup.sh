@@ -16,7 +16,7 @@ fi
 convert "Source Files/Logo/Logo.psd[0]" -flatten -layers merge static/images/kleiderbuegel.png
 
 # Generate Previews
-./themes/projektemacher-base/scripts/preview.sh
+#./themes/projektemacher-base/scripts/preview.sh
 
 #NPM dependencies
 echo "Calling theme scripts"
@@ -38,7 +38,6 @@ $DEPENDENCY_MANAGER install
 
 
 ./scripts/svgo.sh
-python ./scripts/create_masks.py "content/post/**/front.png" "content/post/**/top.png" "content/post/**/back.png"
 
 echo "Make sure './scripts/post-build/index.sh' is executed"
 if [ -d ./scripts/post-build ] ; then
