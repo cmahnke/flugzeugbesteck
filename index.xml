@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flugzeugbesteck</title>
+    <link>https://flugzeugbesteck.projektemacher.org/</link>
+    <description>Recent content on Flugzeugbesteck</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Flugzeugbesteck</copyright><atom:link href="https://flugzeugbesteck.projektemacher.org/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
