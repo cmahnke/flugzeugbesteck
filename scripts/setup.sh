@@ -13,10 +13,10 @@ if [ -z "$SKIP_IIIF" ] ; then
     ./scripts/iiif.sh
 fi
 
-convert "Source Files/Logo/Logo.psd[0]" -flatten -layers merge static/images/kleiderbuegel.png
+convert "Source Files/Images/logo.svg" static/images/flugzeugbesteck.png
 
 # Generate Previews
-#./themes/projektemacher-base/scripts/preview.sh
+./themes/projektemacher-base/scripts/preview.sh
 
 #NPM dependencies
 echo "Calling theme scripts"
