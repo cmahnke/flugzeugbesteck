@@ -1,0 +1,101 @@
+name: Publish on GitHub pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 7 * * 3'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  HUGO_VERSION: 0.162.1
+  DEPENDENCY_MANAGER: npm
+  PYTHON_VERSION: '3.13'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          submodules: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6.4.0
+        with:
+          node-version-file: '.nvmrc'
+
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 9
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install required dependencies
+        run: |
+          ./scripts/github-setup.sh
+          npx puppeteer install chrome@latest
+
+      - name: Install Hugo
+        run: |
+          ./themes/projektemacher-base/scripts/github/setup-hugo.sh ${{ env.HUGO_VERSION }}
+
+      - name: Get Hugo cache
+        uses: actions/cache@v5
+        with:
+          path: resources
+          key: hugo-cache-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: hugo-cache-${{ runner.os }}
+
+      - name: Create IIIF derivates
+        run: docker run -v ${PWD}:${PWD} -e URL_PREFIX="https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/" ghcr.io/cmahnke/iiif-action:latest-jxl-uploader sh -c "cd ${PWD} && ./scripts/iiif.sh"
+
+      - name: Generate Files
+        env:
+          SKIP_IIIF: yes
+        run: |
+          ./scripts/setup.sh
+
+      - name: Generate stats
+        run: |
+          ./themes/projektemacher-base/scripts/stat.sh
+
+      - name: Build Hugo site
+        run: hugo --printI18nWarnings --printUnusedTemplates
+
+      - name: Run post build script
+        run: |
+          ./scripts/post-build/index.sh
+
+      - name: Create print PDF
+        run: |
+          ./scripts/print.sh
+
+      - name: Print cleanup
+        run: |
+          rm -rf docs/catalogue
+          find docs/post -name "*_*.png" -size +1M -type f -exec rm {} \;
+
+      - name: Puppeteer
+        run: ./themes/projektemacher-base/scripts/github/check-js-errors.sh
+
+      - name: Achive links
+        run: python ./themes/projektemacher-base/scripts/archive.py -d docs/ -e kleiderbügel.blaufusstölpel.de,xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de,xn--blaufusstlpel-qmb.de -a 30 -o archived-urls.txt
+
+      - name: Save URL list
+        run: |
+          cp archived-urls.txt docs/
+
+      - name: Deploy site
+        uses: peaceiris/actions-gh-pages@v4.1.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs

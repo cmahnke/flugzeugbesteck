@@ -1,0 +1,15 @@
+dist/**
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+*.webm
+
+touch/public/page031/**
+wikidata-hdt/public/**
+
+wikidata/**/*.nt
+wikidata/**/*.ttl
+__pycache__
+dist

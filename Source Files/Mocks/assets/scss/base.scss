@@ -1,0 +1,198 @@
+@use "sass:color";
+
+@use "pkg:@fontsource-utils/scss" as fontsource;
+@use "pkg:@fontsource-variable/arimo/scss" as arimoVariabale;
+@use "pkg:@fontsource-variable/besley/scss" as besleyVariabale;
+
+@include fontsource.faces($metadata: arimoVariabale.$metadata, $weights: 400, $subsets: latin);
+@include fontsource.faces($metadata: besleyVariabale.$metadata, $weights: 400, $subsets: latin);
+
+$heading-font: "Besley", serif;
+$body-font: "Arimo", sans-serif;
+
+body {
+  font-family: $body-font;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font;
+}
+
+:root {
+  --lh-blue: #002f6c;
+  --lh-yellow: #ffc800;
+  --cool-grey: #a7a9ac;
+  --bg-white: #ffffff;
+  --off-white: #f1f2f2;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-white);
+  color: var(--lh-blue);
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+header {
+  background-color: var(--lh-blue);
+  color: var(--bg-white);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 1px;
+}
+
+.logo-text {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+nav {
+  a {
+    color: var(--bg-white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    margin-left: 30px;
+    text-transform: uppercase;
+  
+    &:hover {
+      color: var(--lh-yellow);
+    }
+  }
+}
+
+.hero {
+  display: flex;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 40px;
+  align-items: center;
+  gap: 40px;
+
+  .hero-text {
+    flex: 1;
+
+    h1 {
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 16px;
+      color: #4a4a4a;
+      max-width: 500px;
+    }
+  }
+}
+
+.hero-visual {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  background: var(--bg-white);
+  padding: 20px;
+}
+
+/* Abstraktes Besteck via CSS geformt (Satinierter Look) */
+.cutlery-shading {
+  width: 320px;
+  height: 24px;
+  background: linear-gradient(to bottom, #d1d3d4, #e6e7e8 30%, #a7a9ac 70%, #808285);
+  border-radius: 4px 20px 20px 4px;
+  transition: filter 0.3s ease;
+}
+
+.cutlery-shading.fork {
+  height: 18px;
+  border-radius: 2px;
+}
+.cutlery-shading.spoon {
+  height: 30px;
+  border-radius: 50% 20% 20% 50%;
+}
+
+.divider {
+  border: none;
+  height: 4px;
+  background-color: var(--lh-yellow);
+  max-width: 1120px;
+  margin: 0 auto;
+
+  & + h2 {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 40px;
+  }
+}
+
+.grid-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  border-left: 1px solid var(--cool-grey);
+  padding: 20px;
+  background: var(--bg-white);
+
+  &:first-child {
+    border: 2px solid var(--lh-yellow); /* Fokus-Rahmen laut Entwurf */
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+  }
+
+  p {
+    font-size: 14px;
+    color: #333;
+  }
+}
+
+.place-holder {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 30px;
+  background: var(--bg-white);
+}
+
+footer {
+  background-color: var(--lh-blue);
+  color: var(--bg-white);
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 60px;
+
+  p {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+

@@ -1,0 +1,19 @@
+@use "sass:color";
+
+@use "footer" as *;
+/* Icons */
+@use "icons" as icons;
+/* Fonts */
+@use "npm-fonts/arimo-variable" as *;
+@use "npm-fonts/besley-variable" as *;
+
+@use "flags/flags" as *;
+
+$heading-font: "Besley", serif;
+$body-font: "Arimo", sans-serif;
+
+
+:root {
+  --heading-font: #{$heading-font};
+  --body-font: #{$body-font};
+}

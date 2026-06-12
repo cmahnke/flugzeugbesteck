@@ -1,0 +1,46 @@
+#!/bin/sh
+
+set -e
+
+if [ -z "$DEPENDENCY_MANAGER" ] ; then
+  DEPENDENCY_MANAGER=npm
+fi
+
+# IIIF tiles
+echo "Set SKIP_IIIF to something to disable generation of IIIF derivates"
+
+if [ -z "$SKIP_IIIF" ] ; then
+    ./scripts/iiif.sh
+fi
+
+convert "Source Files/Logo/Logo.psd[0]" -flatten -layers merge static/images/kleiderbuegel.png
+
+# Generate Previews
+./themes/projektemacher-base/scripts/preview.sh
+
+#NPM dependencies
+echo "Calling theme scripts"
+for SCRIPT in $PWD/themes/projektemacher-base/scripts/init/*.sh ; do
+    echo "Running $SCRIPT"
+    bash "$SCRIPT"
+    ERR=$?
+    if [ $ERR -ne 0 ] ; then
+        echo "Execution of '$SCRIPT' failed!"
+        exit $ERR
+    fi
+done
+
+# Favicons
+#SOURCE="static/images/kleiderbuegel.png" OPTIONS="-resize 128x128 -fuzz 5% -transparent white" ./themes/projektemacher-base/scripts/favicon.sh
+
+$DEPENDENCY_MANAGER install
+#$DEPENDENCY_MANAGER run svgo
+
+
+./scripts/svgo.sh
+python ./scripts/create_masks.py "content/post/**/front.png" "content/post/**/top.png" "content/post/**/back.png"
+
+echo "Make sure './scripts/post-build/index.sh' is executed"
+if [ -d ./scripts/post-build ] ; then
+    echo "Don't forget to run post build scripts after 'hugo'!"
+fi
