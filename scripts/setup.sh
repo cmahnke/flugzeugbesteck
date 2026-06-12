@@ -10,7 +10,8 @@ fi
 echo "Set SKIP_IIIF to something to disable generation of IIIF derivates"
 
 if [ -z "$SKIP_IIIF" ] ; then
-    ./scripts/iiif.sh
+    echo "IIIF generation is disabled"
+    #./scripts/iiif.sh
 fi
 
 convert "Source Files/Images/logo.svg" static/images/flugzeugbesteck.png

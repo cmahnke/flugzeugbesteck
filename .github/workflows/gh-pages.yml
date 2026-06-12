@@ -8,6 +8,10 @@ on:
   schedule:
     - cron:  '0 7 * * 3'
 
+permissions:
+  contents: write
+  pages: write
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -75,8 +79,24 @@ jobs:
         run: |
           ./scripts/post-build/index.sh
 
+      # - name: Create print PDF
+      #   run: |
+      #     ./scripts/print.sh
+      #
+      # - name: Print cleanup
+      #   run: |
+      #     rm -rf docs/catalogue
+      #     find docs/post -name "*_*.png" -size +1M -type f -exec rm {} \;
+
       - name: Puppeteer
         run: ./themes/projektemacher-base/scripts/github/check-js-errors.sh
+
+      # - name: Achive links
+      #   run: python ./themes/projektemacher-base/scripts/archive.py -d docs/ -e kleiderbügel.blaufusstölpel.de,xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de,xn--blaufusstlpel-qmb.de -a 30 -o archived-urls.txt
+      #
+      # - name: Save URL list
+      #   run: |
+      #     cp archived-urls.txt docs/
 
       - name: Deploy site
         uses: peaceiris/actions-gh-pages@v4.1.0
