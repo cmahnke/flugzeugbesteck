@@ -230,7 +230,7 @@ timeout = 120
 
 [[cascade]]
   outputs = ['html','rss', 'iiif-collection']
-  [cascade._target]
+  [cascade.target]
     kind = "term"
 
 [security]
