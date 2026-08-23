@@ -1,9 +1,8 @@
 baseURL = "https://flugzeugbesteck.projektemacher.org/"
-languageCode = "de"
+locale = "de"
 title = "Flugzeugbesteck"
 publishDir = "docs"
 canonifyurls = true
-languagecode = "de"
 defaultcontentlanguage = "de"
 rssLimit = 25
 theme = ["projektemacher-base"]
@@ -16,7 +15,7 @@ timeout = 120
 
 [languages]
   [languages.de]
-    languagename = "Deutsch"
+    label = "Deutsch"
 
     [languages.de.menu]
       [[languages.de.menu.main]]
@@ -51,7 +50,7 @@ timeout = 120
 
 
   [languages.en]
-    languagename = "English"
+    lanbel = "English"
 
     [languages.en.menu]
       [[languages.en.menu.main]]
