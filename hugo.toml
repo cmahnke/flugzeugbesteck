@@ -250,7 +250,7 @@ timeout = 120
             '^https?://vocab\.getty\.edu/.*',
             '^https?://data\.getty\.edu/vocab/.*',
             '^https://qlever\.dev/api/.*',
-            '^https://raw.githubusercontent.com/*'
+            '^https://raw.githubusercontent.com/*',
             '^https://christianmahnke.de/*']
 
   [security.node]
