@@ -3,7 +3,6 @@
     description = ""
     copyrightYears = "MMXXVI"
     cc = false
-    disableScale = true
     debug = false
     useragent = "HugoBot/1.0 (https://flugzeugbesteck.projektemacher.org/; User:CMahnke)"
     schemaPerson = "https://christianmahnke.de/person.jsonld"
