@@ -228,7 +228,7 @@ timeout = 120
         quality = 95
 
 [outputs]
-  page = ["HTML", "JSON"]
+  page = ["HTML"]
 
 [build]
   writeStats = true
