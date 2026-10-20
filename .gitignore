@@ -32,3 +32,9 @@ assets/scss/flags/flags.scss
 assets/scss/fonts/*.scss
 assets/scss/npm-fonts/*.scss
 .vs-*
+
+/package-lock.json
+
+/npm-shrinkwrap.json
+
+/yarn.lock
