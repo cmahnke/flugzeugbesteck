@@ -80,7 +80,7 @@ jobs:
           ./scripts/post-build/index.sh
 
       - name: Puppeteer
-        run: ./themes/projektemacher-base/scripts/github/check-js-errors.sh
+        run: ./themes/projektemacher-base/scripts/github/check-js-errors.sh -i
 
       - name: Deploy site
         uses: peaceiris/actions-gh-pages@v4.1.0
