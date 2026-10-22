@@ -3,7 +3,7 @@ locale = "de"
 title = "Flugzeugbesteck"
 publishDir = "docs"
 canonifyURLs = true
-defaultcontentlanguage = "de"
+defaultContentLanguage = "de"
 rssLimit = 25
 theme = ["projektemacher-base"]
 copyright = "Flugzeugbesteck"
@@ -50,7 +50,7 @@ timeout = 120
 
 
   [languages.en]
-    lanbel = "English"
+    label = "English"
 
     [languages.en.menu]
       [[languages.en.menu.main]]
