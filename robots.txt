@@ -1,0 +1,15 @@
+User-agent: *
+
+Disallow: /privacy/
+
+
+Disallow: /*.bib$
+
+Disallow: /*.json$
+
+Disallow: /*.xml$
+
+Sitemap: https://flugzeugbesteck.projektemacher.org/sitemap.xml
+
+
+llms-txt: https://flugzeugbesteck.projektemacher.org/llms.txt
