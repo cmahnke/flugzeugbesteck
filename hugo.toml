@@ -10,6 +10,8 @@ copyright = "Flugzeugbesteck"
 enableGitInfo = true
 timeout = 120
 
+enableRobotsTXT = true
+
 [params]
   productionIIIFURLPrefix="https://flugzeugbesteck.projektemacher.org/"
 
@@ -277,3 +279,6 @@ timeout = 120
       allowRead = ['.']
       allowWrite = []
       disable = false
+
+[params.robots]
+  llmsTXT = true
