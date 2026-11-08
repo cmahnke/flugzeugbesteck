@@ -16,6 +16,7 @@
                 />
   </url><url>
     <loc>https://flugzeugbesteck.projektemacher.org/</loc>
+    <lastmod>2026-11-08T09:08:22+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
@@ -39,6 +40,20 @@
                 rel="alternate"
                 hreflang="de"
                 href="https://flugzeugbesteck.projektemacher.org/materials/"
+                />
+  </url><url>
+    <loc>https://flugzeugbesteck.projektemacher.org/search/</loc>
+    <lastmod>2026-11-08T09:08:22+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://flugzeugbesteck.projektemacher.org/en/search/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://flugzeugbesteck.projektemacher.org/search/"
                 />
   </url><url>
     <loc>https://flugzeugbesteck.projektemacher.org/types/</loc>
