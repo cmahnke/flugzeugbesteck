@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flugzeugbesteck — Startseite (Entwurf)</title>
+    <link rel="stylesheet" href="./assets/scss/mock.scss" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Zum Inhalt springen</a>
+
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="site-header__logo" href="home.html">
+          <img src="images/logo-anim.svg" alt="Flugzeugbesteck — Logo" width="134" height="52" />
+        </a>
+        <div class="site-header__group">
+          <button class="nav-toggle" type="button" aria-label="Menü" aria-expanded="false" aria-controls="site-nav">
+            <span class="nav-toggle__box" aria-hidden="true">
+              <span class="nav-toggle__bar"></span>
+              <span class="nav-toggle__bar"></span>
+              <span class="nav-toggle__bar"></span>
+            </span>
+          </button>
+          <div class="site-nav-panel" id="site-nav">
+            <nav class="nav" aria-label="Hauptnavigation">
+              <a href="home.html" aria-current="page">Start</a>
+              <a href="collection.html">Sammlung</a>
+              <a href="index.html#status" aria-disabled="true" title="Seite folgt im Entwurf">Links</a>
+              <a href="index.html#status" aria-disabled="true" title="Seite folgt im Entwurf">Suche</a>
+              <a href="about.html">Über</a>
+            </nav>
+            <p class="site-header__langs">
+              <span class="is-active">DE</span><span class="sep">/</span><span class="is-off" title="Englische Fassung folgt">EN</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <h1 class="visually-hidden">Flugzeugbesteck — Alltagsgegenstand und Diebesgut: Besteck und Geschirr aus der Luftfahrt</h1>
+
+      <section class="section" data-carousel aria-label="Featured">
+        <div class="container">
+          <div class="section__head">
+            <div>
+              <p class="kicker">Aus der Sammlung</p>
+              <h2 class="display">Featured</h2>
+            </div>
+            <div class="carousel__controls">
+              <p class="carousel__count caps" data-carousel-count aria-live="polite">01 / 03</p>
+            </div>
+          </div>
+          <div class="carousel__frame">
+            <button class="carousel__btn carousel__btn--prev" type="button" data-carousel-prev aria-label="Voriges Objekt">&#8592;</button>
+            <div class="carousel__viewport" tabindex="0" role="group" aria-roledescription="Karussell" aria-label="Ausgewählte Objekte">
+              <div class="carousel__slide" role="group" aria-roledescription="Folie" aria-label="1 von 3">
+                <div class="feature">
+                  <div class="feature__figure">
+                    <figure>
+                      <div class="figure-panel dots-paper">
+                        <img src="images/knife.svg" alt="Zeichnung eines Bordmessers: flache Klinge, gestempelter Rücken" />
+                      </div>
+                      <figcaption class="figure-note small">Abb. 01 · Bordmesser, Zeichnung nach Vorlage · Foto folgt</figcaption>
+                    </figure>
+                  </div>
+                  <div class="feature__body">
+                    <p class="caps">Featured · Bordbesteck, 3-teilig</p>
+                    <h3 class="display feature__title">Bordbesteck, 3-teilig — Lufthansa</h3>
+                    <p class="lead">
+                      Verschiedene Fluggesellschaften haben im Laufe der Jahrzehnte ihr eigenes Besteckdesign entwickelt — von der Form der
+                      Griffe bis zur Materialwahl. Jedes Detail durchdacht, damit es in der beengten Kabine funktioniert: stapelbar,
+                      spülmaschinenfest, zu klein für ernsthafte Diskussionen.
+                    </p>
+                    <div class="hero__meta">
+                      <span class="chip chip--yellow">Beispieldaten</span>
+                      <span class="caps">Schublade: 2 von 3 Teilen</span>
+                      <span class="hero__meta-rule" aria-hidden="true"></span>
+                      <a class="btn btn--primary" href="detail.html">Zum Datensatz</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel__slide" role="group" aria-roledescription="Folie" aria-label="2 von 3">
+                <div class="feature">
+                  <div class="feature__figure">
+                    <figure>
+                      <div class="figure-panel dots-paper">
+                        <img src="images/spoon-helsinki.svg" alt="Zeichnungsblatt eines Teelöffels" />
+                      </div>
+                      <figcaption class="figure-note small">Abb. 02 · Teelöffel, Zeichnung nach Vorlage · Foto folgt</figcaption>
+                    </figure>
+                  </div>
+                  <div class="feature__body">
+                    <p class="caps">Featured · Teelöffel</p>
+                    <h3 class="display feature__title">Teelöffel — Lufthansa</h3>
+                    <p class="lead">
+                      Der kleinste Gegenstand der Sammlung mit der längsten Reise: Rühr-Löffel für den Kaffee, danach Andenken im
+                      Handgepäck. Aus den 1960er Jahren, einzelnes Teil — und damit vollständig, sofern man den Kaffee nicht mitzählt.
+                    </p>
+                    <div class="hero__meta">
+                      <span class="chip chip--yellow">Beispieldaten</span>
+                      <span class="caps">Einzelteil · vollständig</span>
+                      <span class="hero__meta-rule" aria-hidden="true"></span>
+                      <a class="btn btn--primary" href="detail.html">Zum Datensatz</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel__slide" role="group" aria-roledescription="Folie" aria-label="3 von 3">
+                <div class="feature">
+                  <div class="feature__figure">
+                    <figure>
+                      <div class="figure-panel dots-paper">
+                        <div class="placeholder-photo">Foto folgt</div>
+                      </div>
+                      <figcaption class="figure-note small">Abb. 03 · Dessertbesteck, Fotografie folgt</figcaption>
+                    </figure>
+                  </div>
+                  <div class="feature__body">
+                    <p class="caps">Featured · Dessertbesteck, 3-teilig</p>
+                    <h3 class="display feature__title">Dessertbesteck, 3-teilig — Hapag-Lloyd</h3>
+                    <p class="lead">
+                      Hapag-Lloyd vereinte 1970 Flug- und Seereisen — und brachte Besteck mit, das beidem standhält. Das vollständige Muster
+                      liegt im Bestand: Messer, Gabel und Löffel, ein Fach pro Teil, keine leere Schublade.
+                    </p>
+                    <div class="hero__meta">
+                      <span class="chip chip--yellow">Beispieldaten</span>
+                      <span class="caps">Schublade: 3 von 3 Teilen</span>
+                      <span class="hero__meta-rule" aria-hidden="true"></span>
+                      <a class="btn btn--primary" href="detail.html">Zum Datensatz</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel__btn carousel__btn--next" type="button" data-carousel-next aria-label="Nächstes Objekt">&#8594;</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section__head">
+            <div>
+              <p class="kicker">Aus der Redaktion</p>
+              <h2 class="display">Neueste Einträge</h2>
+            </div>
+            <p class="caps small">Chronologisch, wie im Blog</p>
+          </div>
+          <div class="latest" data-latest>
+            <noscript><p class="small">Die Beispieldaten werden mit JavaScript aus der gemeinsamen Datenbasis geladen.</p></noscript>
+          </div>
+          <a class="toc__more" href="collection.html">Alle Einträge in der Sammlung</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container feature">
+          <div class="feature__figure">
+            <figure>
+              <div class="figure-panel dots-paper">
+                <img src="images/knife.svg" alt="Zeichnung eines Bordmessers: flache Klinge, gestempelter Rücken" />
+              </div>
+              <figcaption class="figure-note small">Abb. 02 · Bordmesser, Zeichnung nach Vorlage · Foto folgt</figcaption>
+            </figure>
+          </div>
+          <div class="feature__body">
+            <p class="caps">Featured · Der aktuelle Datensatz</p>
+            <h2 class="display feature__title">Bordbesteck, 3-teilig — Lufthansa</h2>
+            <p class="lead">
+              Verschiedene Fluggesellschaften haben im Laufe der Jahrzehnte ihr eigenes Besteckdesign entwickelt — von der Form der Griffe
+              bis zur Materialwahl. Jedes Detail durchdacht, damit es in der beengten Kabine funktioniert: stapelbar, spülmaschinenfest, zu
+              klein für ernsthafte Diskussionen.
+            </p>
+            <p>
+              Dieser Datensatz sammelt, was das Muster ausmacht — Messer, Gabel und Löffel — und zeigt im Bestand ehrlich, was schon da ist
+              und was noch fehlt: Die Besteckschublade unten auf der Datensatzseite belegt jedes Fach nur, wenn das Teil wirklich in der
+              Sammlung liegt.
+            </p>
+            <div class="hero__meta">
+              <span class="chip chip--yellow">Beispieldaten</span>
+              <span class="caps">Schublade: 2 von 3 Teilen</span>
+              <span class="hero__meta-rule" aria-hidden="true"></span>
+              <a class="btn btn--primary" href="detail.html">Zum Datensatz</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--tight">
+        <div class="container">
+          <div class="quicklinks">
+            <p class="caps quicklinks__label">Einstiege:</p>
+            <a class="quicklink" href="collection.html#airlines">Nach Fluggesellschaft</a>
+            <a class="quicklink" href="collection.html#types">Nach Gattung</a>
+            <a class="quicklink" href="collection.html#materials">Nach Material</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="wave-strip" aria-hidden="true">
+        <img src="images/waves.svg" alt="" />
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__grid">
+        <div>
+          <h2>Flugzeugbesteck</h2>
+          <p>Ein Sammelprojekt zu Besteck und Geschirr, das Passagiere und Gäste gern mitgehen lassen — nicht nur aus Flugzeugen.</p>
+        </div>
+        <div>
+          <h2>Navigation</h2>
+          <ul>
+            <li><a href="home.html">Start</a></li>
+            <li><a href="collection.html">Sammlung</a></li>
+            <li><a href="detail.html">Datensatz (Beispiel)</a></li>
+            <li><a href="about.html">Über</a></li>
+            <li><a href="index.html#status">Suche · folgt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Hinweise zum Entwurf</h2>
+          <ul>
+            <li>Entwurf 01 · November 2026</li>
+            <li>Schriften: Besley, Arimo (lokal)</li>
+            <li>Fotos: folgen</li>
+          </ul>
+        </div>
+      </div>
+      <div class="container site-footer__bar">
+        <p>Flugzeugbesteck ist ein Projektemacher Blog © MMXXVI</p>
+      </div>
+    </footer>
+
+    <script type="module" src="./assets/ts/mock.ts"></script>
+  </body>
+</html>

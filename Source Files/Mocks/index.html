@@ -1,95 +1,462 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet preload prefetch" as="style" href="./assets/scss/base.scss" crossorigin />
-
-    <title>Flugzeugbesteck</title>
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <title>Flugzeugbesteck — Entwurfsübersicht</title>
+    <link rel="stylesheet" href="./assets/scss/mock.scss" />
   </head>
-
   <body>
-    <header>
-      <div class="header-logo">
-        <img src="/assets/logo.svg" alt="Flugzeugbesteck Logo" />
+    <a class="skip" href="#main">Zum Inhalt springen</a>
+
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="site-header__logo" href="home.html">
+          <img src="images/logo-anim.svg" alt="Flugzeugbesteck — Logo" width="134" height="52" />
+        </a>
+        <div class="site-header__group">
+          <button class="nav-toggle" type="button" aria-label="Menü" aria-expanded="false" aria-controls="site-nav">
+            <span class="nav-toggle__box" aria-hidden="true">
+              <span class="nav-toggle__bar"></span>
+              <span class="nav-toggle__bar"></span>
+              <span class="nav-toggle__bar"></span>
+            </span>
+          </button>
+          <div class="site-nav-panel" id="site-nav">
+            <nav class="nav" aria-label="Hauptnavigation">
+              <a href="home.html">Start</a>
+              <a href="collection.html">Sammlung</a>
+              <a href="index.html#status" aria-disabled="true" title="Seite folgt im Entwurf">Links</a>
+              <a href="index.html#status" aria-disabled="true" title="Seite folgt im Entwurf">Suche</a>
+              <a href="about.html">Über</a>
+            </nav>
+            <p class="site-header__langs">
+              <span class="is-active">DE</span><span class="sep">/</span><span class="is-off" title="Englische Fassung folgt">EN</span>
+            </p>
+          </div>
+        </div>
       </div>
-      <nav>
-        <a href="#categories">Kategorien</a>
-        <a href="#search">Suche</a>
-        <a href="#links">Links</a>
-        <a href="#about">Über</a>
-      </nav>
     </header>
 
-    <main class="hero">
-      <div class="hero-text">
-        <h1>Alltagsgenstand und Diebesgut:<br />Flugzeugbesteck</h1>
-        <p>
-          Und anderes Besteck (und Geschirr), die Passagiere und Gäste gerne mitgehen lassen, nicht nur aus Flugzeugen.
-      </div>
-      <div class="hero-visual">
-        <div class="cutlery-shading knife" id="meta-knife"></div>
-        <div class="cutlery-shading fork" id="meta-fork"></div>
-        <div class="cutlery-shading spoon" id="meta-spoon"></div>
-      </div>
+    <main id="main">
+      <section class="hero">
+        <div class="container">
+          <p class="kicker">Gestaltungsbogen · Stand aller Seiten</p>
+          <h1 class="display hero__title">Entwurfs&shy;übersicht</h1>
+          <p class="lead">
+            Statische HTML-Entwürfe im Stil einer Airline-Zeitschrift der sechziger und siebziger Jahre: Nachtblau, Sonnenigelb,
+            Besley-Display-Serifen und Trennlinien wie im Druck. Diese Übersicht sammelt Farbwelt, Schriften und Bausteine; die
+            Seitenentwürfe darunter sind untereinander verlinkt.
+          </p>
+          <div class="hero__meta">
+            <span class="chip">Entwurf 01</span>
+            <span class="caps">Vier Seiten zur Ansicht</span>
+            <span class="hero__meta-rule" aria-hidden="true"></span>
+            <span class="caps">Kein Hugo-Build</span>
+          </div>
+        </div>
+      </section>
+
+      <hr class="rule-double" />
+
+      <section class="section">
+        <div class="container">
+          <div class="section__head">
+            <div>
+              <p class="kicker">Abschnitt I</p>
+              <h2 class="display">Farbwelt</h2>
+            </div>
+            <p class="caps small">Aus Logo &amp; Vorlagen</p>
+          </div>
+          <ul class="swatches">
+            <li class="swatch">
+              <div class="swatch__chip" style="background: #002752"></div>
+              <div class="swatch__body">
+                <p class="swatch__name">Nachtblau</p>
+                <p class="swatch__hex">#002752</p>
+              </div>
+            </li>
+            <li class="swatch">
+              <div class="swatch__chip" style="background: #002f6c"></div>
+              <div class="swatch__body">
+                <p class="swatch__name">Tiefblau</p>
+                <p class="swatch__hex">#002f6c</p>
+              </div>
+            </li>
+            <li class="swatch">
+              <div class="swatch__chip" style="background: #0e6cb4"></div>
+              <div class="swatch__body">
+                <p class="swatch__name">Himmelblau</p>
+                <p class="swatch__hex">#0e6cb4</p>
+              </div>
+            </li>
+            <li class="swatch">
+              <div class="swatch__chip" style="background: #54a8cd"></div>
+              <div class="swatch__body">
+                <p class="swatch__name">Pulverblau</p>
+                <p class="swatch__hex">#54a8cd</p>
+              </div>
+            </li>
+            <li class="swatch">
+              <div class="swatch__chip" style="background: #59acd1"></div>
+              <div class="swatch__body">
+                <p class="swatch__name">Wolkenton</p>
+                <p class="swatch__hex">#59acd1</p>
+              </div>
+            </li>
+            <li class="swatch">
+              <div class="swatch__chip" style="background: #f1b505"></div>
+              <div class="swatch__body">
+                <p class="swatch__name">Sonnenigelb</p>
+                <p class="swatch__hex">#f1b505</p>
+              </div>
+            </li>
+            <li class="swatch">
+              <div class="swatch__chip" style="background: #ffc800"></div>
+              <div class="swatch__body">
+                <p class="swatch__name">Signalgelb</p>
+                <p class="swatch__hex">#ffc800</p>
+              </div>
+            </li>
+            <li class="swatch">
+              <div class="swatch__chip" style="background: #a7a9ac"></div>
+              <div class="swatch__body">
+                <p class="swatch__name">Kühles Grau</p>
+                <p class="swatch__hex">#a7a9ac</p>
+              </div>
+            </li>
+            <li class="swatch">
+              <div class="swatch__chip" style="background: #f1f2f2"></div>
+              <div class="swatch__body">
+                <p class="swatch__name">Nebelweiß</p>
+                <p class="swatch__hex">#f1f2f2</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section section--tight">
+        <div class="container">
+          <div class="section__head">
+            <div>
+              <p class="kicker">Abschnitt II</p>
+              <h2 class="display">Typografie</h2>
+            </div>
+            <p class="caps small">Besley &amp; Arimo, lokal eingebunden</p>
+          </div>
+          <div class="specimen">
+            <div class="specimen__panel">
+              <div class="specimen__label">
+                <p class="caps">Besley — Display-Serif</p>
+                <p class="small">Variable Schrift, 100–900</p>
+              </div>
+              <p class="ts-display">Flugzeug&shy;besteck</p>
+              <p class="ts-h2">Gedeckt für den Flug</p>
+              <p class="specimen__alpha">ABCDEFGHIJKLM NOPQRSTUVWXYZ ÄÖÜ — abcdefghijklmnopqrstuvwxyz äöüß 0123456789</p>
+            </div>
+            <div class="specimen__panel specimen__panel--body">
+              <div class="specimen__label">
+                <p class="caps">Arimo — Satzschrift</p>
+                <p class="small">Variable Schrift, 100–900</p>
+              </div>
+              <p class="specimen__sample">
+                Löffel, Messer, Gabel und Geschirr — Gegenstände, die Passagiere und Gäste gern mitgehen lassen.
+              </p>
+              <p class="specimen__alpha">
+                Das Bordbesteck begleitet die Luftfahrt seit ihren Anfängen: schlicht, langlebig und prägnant geprägt.
+              </p>
+            </div>
+          </div>
+          <ul class="type-scale">
+            <li>
+              <span class="caps">Display H1 · Besley 800 · 40–65&nbsp;px</span
+              ><span class="ts-display">Alltagsgegenstand und Diebesgut</span>
+            </li>
+            <li><span class="caps">Abschnitt · Besley 700 · 29–42&nbsp;px</span><span class="ts-h2">Gattungen</span></li>
+            <li><span class="caps">Titel · Besley 700 · 21&nbsp;px</span><span class="ts-h3">Bordmesser, Lufthansa</span></li>
+            <li>
+              <span class="caps">Einstieg · Arimo · 18&nbsp;px</span
+              ><span class="ts-lead">Und anderes Besteck und Geschirr, das gern mitgegangen ist — nicht nur aus Flugzeugen.</span>
+            </li>
+            <li>
+              <span class="caps">Text · Arimo · 16–17&nbsp;px</span
+              ><span class="ts-body"
+                >Verschiedene Fluggesellschaften haben im Laufe der Jahrzehnte ihr eigenes Besteckdesign entwickelt — von der Griff­form bis
+                zur Materialwahl.</span
+              >
+            </li>
+            <li>
+              <span class="caps">Kicker · Arimo 700 · 12&nbsp;px · gesperrt</span><span class="kicker">Sammlung · Gattung: Löffel</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section section--tight">
+        <div class="container">
+          <div class="section__head">
+            <div>
+              <p class="kicker">Abschnitt III</p>
+              <h2 class="display">Bausteine</h2>
+            </div>
+            <p class="caps small">Regeln, Flächen, Signale</p>
+          </div>
+          <div class="blocks">
+            <div class="block-card">
+              <p class="caps">Regeln &amp; Bänder</p>
+              <hr class="rule-double" />
+              <hr class="rule-hair" />
+              <div class="band"><p class="band__ticker">Neueste Einträge — Featured — Einstiege — Lufthansa · Hapag-Lloyd · Pan Am</p></div>
+              <div class="dots-paper dots-demo"></div>
+            </div>
+            <div class="block-card">
+              <p class="caps">Signatur &amp; Etiketten</p>
+              <p class="kicker">Sammlung · Gattung: Löffel</p>
+              <div class="block-row">
+                <span class="chip">Lufthansa</span>
+                <span class="chip chip--outline">Messer</span>
+                <span class="chip chip--yellow">Beispieldaten</span>
+              </div>
+              <p class="small caps">Abb. 01 · Zeichnung nach Vorlage</p>
+            </div>
+            <div class="block-card">
+              <p class="caps">Schaltflächen</p>
+              <div class="block-row">
+                <a class="btn btn--primary" href="collection.html">Zur Sammlung</a>
+                <a class="btn btn--secondary" href="collection.html">Alle Einträge</a>
+              </div>
+              <p class="small">Eckige Formen, harte Schlagschatten, Uppercase — zuständig für Farbe erst beim Überfahren.</p>
+            </div>
+            <div class="block-card">
+              <p class="caps">Bildflächen</p>
+              <div class="placeholder-photo" style="min-height: 88px">Foto folgt</div>
+              <p class="small">
+                Vorhandene Zeichnungen (Messer, Löffel) werden direkt verwendet; fehlende Fotografien erhalten deutlich markierte Flächen.
+              </p>
+            </div>
+            <div class="block-card">
+              <p class="caps">Datenblatt-Auszug</p>
+              <dl class="sheet__table">
+                <dt>Gesellschaft</dt>
+                <dd>Lufthansa</dd>
+                <dt>Gattung</dt>
+                <dd>Messer</dd>
+                <dt>Zeitraum</dt>
+                <dd>1970er</dd>
+              </dl>
+            </div>
+            <div class="block-card">
+              <p class="caps">Besteckschublade</p>
+              <div class="drawer">
+                <div class="drawer__rail">
+                  <span class="drawer__plate">Lufthansa</span>
+                  <span class="drawer__pull" aria-hidden="true"></span>
+                  <span class="drawer__rail-note">2 von 3 Teilen</span>
+                </div>
+                <div class="drawer__box dots-dark">
+                  <div class="drawer__grid">
+                    <div class="drawer__slot drawer__slot--filled">
+                      <span class="drawer__slot-no">Teil 1</span>
+                      <span class="drawer__slot-piece" style="--lift-i: 0"><img src="images/knife.svg" alt="Zeichnung: Bordmesser" /></span>
+                      <span class="drawer__slot-name">Bordmesser</span>
+                      <span class="drawer__state drawer__state--ok">● Im Bestand</span>
+                    </div>
+                    <div class="drawer__slot">
+                      <span class="drawer__slot-no">Teil 2</span>
+                      <span class="drawer__slot-piece"><span class="drawer__void">Fach leer</span></span>
+                      <span class="drawer__slot-name">Bordlöffel</span>
+                      <span class="drawer__state">○ Fehlt — folgt</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="small">
+                Ein Fach pro Teil des Datensatzes: belegt, wenn das Stück liegt; leer mit Kennzeichnung, wenn es fehlt. Aus der gemeinsamen
+                Datenbasis aufgebaut. Kommt die Schublade beim Scrollen in den Blick, zieht sie sich auf und belegte Stücke heben sich der
+                Reihe nach aus ihren Fächern — hier im Baustein direkt ausprobierbar.
+              </p>
+            </div>
+            <div class="block-card">
+              <p class="caps">Kopfzeilen-Menü · Burger</p>
+              <div class="block-row">
+                <span class="nav-toggle nav-toggle--probe" aria-hidden="true">
+                  <span class="nav-toggle__box">
+                    <span class="nav-toggle__bar"></span>
+                    <span class="nav-toggle__bar"></span>
+                    <span class="nav-toggle__bar"></span>
+                  </span>
+                </span>
+              </div>
+              <p class="small">
+                Nur unter 640&nbsp;px klappt die Navigation als Overlay auf: nummerierte Serifen-Einträge mit Pfeilen wie auf einer
+                Abflugtafel, die Sprachumschaltung wandert mit ins Panel. Auf allen breiteren Bildschirmen bleibt die gewöhnliche
+                Navigationszeile stehen. Ausprobierbar in der Kopfzeile dieses Bogens — Escape oder ein Linkklick schließt, im Hintergrund
+                ruhen Scrollen und Fokus. Ohne JavaScript bleibt die Navigation ebenfalls eine gewöhnliche Zeile.
+              </p>
+            </div>
+            <div class="block-card">
+              <p class="caps">Bühnenbild</p>
+              <div class="entry__scene" aria-hidden="true">
+                <img class="entry__sun" src="images/sun.png" alt="" />
+                <img class="entry__wave" src="images/waves.svg" alt="" />
+                <img class="entry__plane" src="images/747-silhouette.svg" alt="" />
+              </div>
+              <p class="small">Sonne, Wellen und 747-Silhouette aus den Quelldateien — als Dekor unter Vorbehalt, nie als Inhaltsfoto.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--tight">
+        <div class="container">
+          <div class="section__head">
+            <div>
+              <p class="kicker">Abschnitt IV</p>
+              <h2 class="display">Seitenentwürfe</h2>
+            </div>
+            <p class="caps small">Untereinander verlinkt</p>
+          </div>
+          <div class="entries">
+            <a class="entry" href="home.html">
+              <div class="entry__scene" aria-hidden="true">
+                <img class="entry__sun" src="images/sun.png" alt="" />
+                <img class="entry__wave" src="images/waves.svg" alt="" />
+                <img class="entry__plane" src="images/747-silhouette.svg" alt="" />
+              </div>
+              <div class="entry__body">
+                <p class="entry__title">Startseite</p>
+                <p class="entry__desc">
+                  Deckblatt mit riesiger Serifen-Headline und Bühnenbild; darunter „Neueste Einträge“ als chronologische Liste und der
+                  aktuelle Datensatz als „Featured“.
+                </p>
+                <p class="entry__foot"><span class="chip">Fertig zur Ansicht</span><span class="caps small">HTML · Entwurf 01</span></p>
+              </div>
+            </a>
+            <a class="entry" href="collection.html">
+              <div class="entry__scene" aria-hidden="true">
+                <img class="entry__wave entry__wave--full" src="images/waves.svg" alt="" />
+                <img class="entry__plane entry__plane--high" src="images/747-silhouette.svg" alt="" />
+              </div>
+              <div class="entry__body">
+                <p class="entry__title">Sammlung</p>
+                <p class="entry__desc">
+                  Einstiege statt Abschnitte: primär nach Fluggesellschaft im Fahrplan-Stil, daneben Einstiege nach Gattung und Material —
+                  jede Zeile zählt den Bestand aus der Datenbasis.
+                </p>
+                <p class="entry__foot"><span class="chip">Fertig zur Ansicht</span><span class="caps small">HTML · Entwurf 01</span></p>
+              </div>
+            </a>
+            <a class="entry" href="detail.html">
+              <div class="entry__scene" aria-hidden="true">
+                <img class="entry__sun entry__sun--board" src="images/sun.png" alt="" />
+                <img class="entry__knife" src="images/knife.svg" alt="" />
+              </div>
+              <div class="entry__body">
+                <p class="entry__title">Datensatz</p>
+                <p class="entry__desc">
+                  Vollständiger Datensatz: Abbildung, Datenblatt, Schlagworte, Blättern — und die dynamische Besteckschublade, die für jedes
+                  Teil ein Fach zeigt (unvollständig) plus Vergleich mit vollständig belegter Schublade.
+                </p>
+                <p class="entry__foot"><span class="chip">Fertig zur Ansicht</span><span class="caps small">HTML · Entwurf 01</span></p>
+              </div>
+            </a>
+            <a class="entry" href="about.html">
+              <div class="entry__scene" aria-hidden="true">
+                <img class="entry__sun entry__sun--board" src="images/sun.png" alt="" />
+                <img class="entry__wave entry__wave--full" src="images/waves.svg" alt="" />
+              </div>
+              <div class="entry__body">
+                <p class="entry__title">Über</p>
+                <p class="entry__desc">
+                  Das Projekt erzählt: redaktioneller Artikelteil mit Initiale, Fakten-Kolumne, Zahlenband zum Bestand (Beispielwerte) und
+                  Kolophon — die „Über“-Seite ist in der Navigation jetzt echt verlinkt.
+                </p>
+                <p class="entry__foot"><span class="chip">Fertig zur Ansicht</span><span class="caps small">HTML · Entwurf 01</span></p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--tight" id="status">
+        <div class="container">
+          <div class="notes">
+            <p class="caps">Status &amp; offene Punkte</p>
+            <ul>
+              <li>Fotografien der Objekte fehlen — alle Bildflächen sind im Entwurf deutlich als „Foto folgt“ markiert.</li>
+              <li>Zeichnungen aus den Quelldateien (Messer, Löffel-Helsinki, 747, Sonne, Wellen, Logo) sind eingebunden.</li>
+              <li>
+                Lebendes Logo: Nur die Wellen ziehen sanft — Sonne, Flugzeug und Himmel bleiben statisch; bei „reduzierte Bewegung“ schaltet
+                die Animation ab.
+              </li>
+              <li>
+                Struktur: Startseite zeigt „Neueste Einträge“ und „Featured“; die Sammlung öffnet sich über Einstiege (Fluggesellschaft,
+                Gattung, Material) statt Abschnitten.
+              </li>
+              <li>
+                Burger-Menü: nur unter 640&nbsp;px klappt die Navigation als Overlay auf (Abflugtafel-Stil mit Fortlauf-Nummern und
+                Sprachumschaltung im Panel); auf allen breiteren Bildschirmen bleibt die gewöhnliche Navigationszeile stehen. Scrollen und
+                Fokus im Hintergrund sind gesperrt, Escape schließt, ohne JavaScript bleibt die Navigation ebenfalls eine gewöhnliche Zeile.
+              </li>
+              <li>
+                Besteckschublade: gehört in jeden Datensatz, wird aus der gemeinsamen Datenbasis aufgebaut — ein Fach pro Teil, leere Fächer
+                markieren Fehlendes (Beispiele: Bordbesteck unvollständig, Dessertbesteck vollständig). Öffnen-Animation: Die Schublade
+                zieht sich beim Scrollen in den Blick auf, belegte Stücke heben sich gestaffelt aus den Fächern; bei „reduzierte Bewegung“
+                läuft alles ohne Animation.
+              </li>
+              <li>
+                Beispieldatenbasis: assets/ts/mock.ts (von Vite gebaut) — Startseite, Sammlung und Schublade erzählen aus demselben Bestand
+                (8 Datensätze).
+              </li>
+              <li>
+                Über-Seite entworfen: Projekttext mit Initiale, Fakten-Kolumne, Zahlenband zum Bestand (Beispielwerte) und Kolophon — in der
+                Navigation echt verlinkt.
+              </li>
+              <li>Seiten für Links und Suche folgen; die Navigation zeigt sie bereits als Platzhalter.</li>
+              <li>Die Karte ist aus der Navigation genommen — kein eigener Seitenentwurf mehr geplant.</li>
+              <li>Datenblätter verwenden gekennzeichnete Beispieldaten, keine Bestandsfakten.</li>
+              <li>Druck: als künftige Variante vorgesehen — eigener Entwurf folgt, wenn die Website steht.</li>
+              <li>Hugo-Umsetzung und Suchindex (Pagefind) bleiben bewusst außen vor — erst wird das Aussehen abgestimmt.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <hr class="divider" />
-
-    <h2>Gattungen</h2>
-    <section class="grid-container">
-
-      <div class="card">
-        <h3>Löffel</h3>
-        <svg class="place-holder" viewBox="0 0 200 60"></svg>
-        <p>Meistens für Kaffee, ab und zu für Suppe.</p>
+    <footer class="site-footer">
+      <div class="container site-footer__grid">
+        <div>
+          <h2>Flugzeugbesteck</h2>
+          <p>Ein Sammelprojekt zu Besteck und Geschirr, das Passagiere und Gäste gern mitgehen lassen — nicht nur aus Flugzeugen.</p>
+        </div>
+        <div>
+          <h2>Navigation</h2>
+          <ul>
+            <li><a href="home.html">Start</a></li>
+            <li><a href="collection.html">Sammlung</a></li>
+            <li><a href="detail.html">Datensatz (Beispiel)</a></li>
+            <li><a href="about.html">Über</a></li>
+            <li><a href="index.html#status">Suche · folgt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Hinweise zum Entwurf</h2>
+          <ul>
+            <li>Entwurf 01 · November 2026</li>
+            <li>Schriften: Besley, Arimo (lokal)</li>
+            <li>Druck: künftige Variante</li>
+            <li>Fotos: folgen</li>
+          </ul>
+        </div>
       </div>
-      
-      <div class="card">
-        <h3>Messer</h3>
-        <svg class="place-holder" viewBox="0 0 200 60"></svg>
-        <p></p>
+      <div class="container site-footer__bar">
+        <p>Flugzeugbesteck ist ein Projektemacher Blog © MMXXVI</p>
+        <p>Gestaltungsbogen · Seite 1/5</p>
       </div>
-
-      <div class="card">
-        <h3>Gabel</h3>
-        <svg class="place-holder" viewBox="0 0 200 60"></svg>
-        <p></p>
-      </div>
-
-      <div class="card">
-        <h3>Geschirr</h3>
-        <svg class="place-holder" viewBox="0 0 200 60"></svg>
-        <p>Schalen und Teller.</p>
-      </div>
-    </section>
-
-    <hr class="divider" />
-
-    <h2>Fluggesellschaften</h2>
-    <section class="grid-container">
-      
-      <div class="card">
-        <h3>Lufthansa</h3>
-        <svg class="place-holder" viewBox="0 0 200 60"></svg>
-        <p>Deutsche Fluggesellschaft</p>
-      </div>
-
-      <div class="card">
-        <h3>Hapag-Lloyd</h3>
-        <svg class="place-holder" viewBox="0 0 200 60"></svg>
-        <p>Deutsche Fluggesellschaft</p>
-      </div>
-
-    </section>
-
-    <p>
-      Verschiedene Fluggesellschaften haben im Laufe der Jahrzehnte ihr eigenes Besteckdesign entwickelt, um den spezifischen Anforderungen des Bordservices gerecht zu werden. Von der Form der Griffe bis zur Materialwahl – jedes Detail wurde sorgfältig durchdacht, um den Passagieren ein angenehmes Esserlebnis zu bieten, selbst in der beengten Umgebung eines Flugzeugs.
-    </p>
-
-    <footer>
-      <p>Flugzeugbesteck ist ein Projektemacher Blog © MMXXVI</p>
     </footer>
-    <script type="module" src="./assets/ts/main.ts"></script>
   </body>
 </html>

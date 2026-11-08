@@ -1,4 +1,4 @@
-/* — Typografie und Druckerzeugnis-Werkzeuge — */
+/* — Typography and print-product tools — */
 
 .kicker {
   font-family: var(--font-body);
@@ -7,10 +7,10 @@
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--sky);
-}
 
-.kicker--light {
-  color: var(--signal);
+  &--light {
+    color: var(--signal);
+  }
 }
 
 .display {
@@ -85,17 +85,17 @@ h3 {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   padding: 0.3rem 0.65rem;
-}
 
-.chip--outline {
-  background: transparent;
-  color: var(--navy);
-  border: 1px solid var(--navy);
-}
+  &--outline {
+    background: transparent;
+    color: var(--navy);
+    border: 1px solid var(--navy);
+  }
 
-.chip--yellow {
-  background: var(--signal);
-  color: var(--navy);
+  &--yellow {
+    background: var(--signal);
+    color: var(--navy);
+  }
 }
 
 .btn {
@@ -108,27 +108,27 @@ h3 {
   padding: 0.8rem 1.4rem;
   border: 2px solid var(--navy);
   transition: background-color 180ms ease-out, color 180ms ease-out;
-}
 
-.btn--primary {
-  background: var(--navy);
-  color: var(--paper);
-  box-shadow: 4px 4px 0 var(--signal);
-}
+  &--primary {
+    background: var(--navy);
+    color: var(--paper);
+    box-shadow: 4px 4px 0 var(--signal);
 
-.btn--primary:hover {
-  background: var(--sky);
-  color: var(--paper);
-}
+    &:hover {
+      background: var(--sky);
+      color: var(--paper);
+    }
+  }
 
-.btn--secondary {
-  background: transparent;
-  color: var(--navy);
-}
+  &--secondary {
+    background: transparent;
+    color: var(--navy);
 
-.btn--secondary:hover {
-  background: var(--navy);
-  color: var(--paper);
+    &:hover {
+      background: var(--navy);
+      color: var(--paper);
+    }
+  }
 }
 
 .placeholder-photo {
@@ -153,10 +153,10 @@ h3 {
   align-items: center;
   margin-top: var(--space-5);
   color: var(--ink-soft);
-}
 
-.hero__meta .caps {
-  color: var(--sky);
+  .caps {
+    color: var(--sky);
+  }
 }
 
 .hero__meta-rule {

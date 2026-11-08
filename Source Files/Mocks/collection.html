@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flugzeugbesteck — Sammlung (Entwurf)</title>
+    <link rel="stylesheet" href="./assets/scss/mock.scss" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Zum Inhalt springen</a>
+
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="site-header__logo" href="home.html">
+          <img src="images/logo-anim.svg" alt="Flugzeugbesteck — Logo" width="134" height="52" />
+        </a>
+        <div class="site-header__group">
+          <button class="nav-toggle" type="button" aria-label="Menü" aria-expanded="false" aria-controls="site-nav">
+            <span class="nav-toggle__box" aria-hidden="true">
+              <span class="nav-toggle__bar"></span>
+              <span class="nav-toggle__bar"></span>
+              <span class="nav-toggle__bar"></span>
+            </span>
+          </button>
+          <div class="site-nav-panel" id="site-nav">
+            <nav class="nav" aria-label="Hauptnavigation">
+              <a href="home.html">Start</a>
+              <a href="collection.html" aria-current="page">Sammlung</a>
+              <a href="index.html#status" aria-disabled="true" title="Seite folgt im Entwurf">Links</a>
+              <a href="index.html#status" aria-disabled="true" title="Seite folgt im Entwurf">Suche</a>
+              <a href="about.html">Über</a>
+            </nav>
+            <p class="site-header__langs">
+              <span class="is-active">DE</span><span class="sep">/</span><span class="is-off" title="Englische Fassung folgt">EN</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="pagehead">
+        <div class="container">
+          <p class="kicker">Sammlung · Einstiege</p>
+          <h1 class="display pagehead__title">Sammlung</h1>
+          <p class="lead">
+            Kein langes Register: Der Bestand öffnet sich über Einstiege — zuerst nach Fluggesellschaft, daneben nach Gattung und Material.
+            Jeder Einstieg führt in das Verzeichnis seiner Datensätze; jeder Datensatz zeigt unten seine eigene Besteckschublade,
+            vollständig oder mit leeren Fächern.
+          </p>
+        </div>
+      </section>
+
+      <div class="wave-strip" aria-hidden="true">
+        <img src="images/waves.svg" alt="" />
+      </div>
+
+      <section class="section section--tight" id="airlines">
+        <div class="container">
+          <div class="section__head">
+            <div>
+              <p class="kicker">Einstieg I · Primär</p>
+              <h2 class="display">Fluggesellschaften</h2>
+            </div>
+            <p class="caps small">Wer hat’s emittiert?</p>
+          </div>
+          <div class="timetable">
+            <div class="timetable__head">
+              <p class="caps">Emblem</p>
+              <p class="caps">Gesellschaft &amp; Herkunft</p>
+              <p class="caps">Zum Bestand</p>
+            </div>
+            <div data-airlines>
+              <noscript><p class="small">Die Beispieldaten werden mit JavaScript aus der gemeinsamen Datenbasis geladen.</p></noscript>
+            </div>
+          </div>
+          <p class="small para-note">Weitere Gesellschaften folgen, sobald der Bestand aufgebaut ist.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section__head">
+            <div>
+              <p class="kicker">Einstieg II · Alternativ</p>
+              <h2 class="display">Weitere Einstiege</h2>
+            </div>
+            <p class="caps small">Für Quereinsteiger</p>
+          </div>
+          <div class="index-cols">
+            <div id="types">
+              <h3>Nach Gattung</h3>
+              <div class="indexlist" data-types>
+                <noscript><p class="small">Die Beispieldaten werden mit JavaScript geladen.</p></noscript>
+              </div>
+            </div>
+            <div id="materials">
+              <h3>Nach Material</h3>
+              <div class="indexlist" data-materials>
+                <noscript><p class="small">Die Beispieldaten werden mit JavaScript geladen.</p></noscript>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__grid">
+        <div>
+          <h2>Flugzeugbesteck</h2>
+          <p>Ein Sammelprojekt zu Besteck und Geschirr, das Passagiere und Gäste gern mitgehen lassen — nicht nur aus Flugzeugen.</p>
+        </div>
+        <div>
+          <h2>Navigation</h2>
+          <ul>
+            <li><a href="home.html">Start</a></li>
+            <li><a href="collection.html">Sammlung</a></li>
+            <li><a href="detail.html">Datensatz (Beispiel)</a></li>
+            <li><a href="about.html">Über</a></li>
+            <li><a href="index.html#status">Suche · folgt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Hinweise zum Entwurf</h2>
+          <ul>
+            <li>Entwurf 01 · November 2026</li>
+            <li>Schriften: Besley, Arimo (lokal)</li>
+            <li>Fotos: folgen</li>
+          </ul>
+        </div>
+      </div>
+      <div class="container site-footer__bar">
+        <p>Flugzeugbesteck ist ein Projektemacher Blog © MMXXVI</p>
+      </div>
+    </footer>
+
+    <script type="module" src="./assets/ts/mock.ts"></script>
+  </body>
+</html>

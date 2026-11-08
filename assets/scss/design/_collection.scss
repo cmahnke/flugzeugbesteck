@@ -1,31 +1,62 @@
-/* — Sammlung: Einstiege (Fahrplan und Registerlisten) — */
+/* — Collection: entries (timetable and register lists) — */
 
-.timetable__head,
-.timetable__row {
-  display: grid;
-  grid-template-columns: 72px 1fr auto;
-  align-items: center;
-  gap: var(--space-4);
-}
+.timetable {
+  &__head,
+  &__row {
+    display: grid;
+    grid-template-columns: 72px 1fr auto;
+    align-items: center;
+    gap: var(--space-4);
 
-.timetable__head {
-  color: var(--ink-soft);
-  padding-bottom: var(--space-2);
-}
+    @media (max-width: 639px) {
+      grid-template-columns: 56px 1fr;
+    }
+  }
 
-.timetable__row {
-  padding-block: var(--space-4);
-  border-top: 1px solid var(--hairline);
-  text-decoration: none;
-  transition: background-color 180ms ease-out;
-}
+  &__head {
+    color: var(--ink-soft);
+    padding-bottom: var(--space-2);
+  }
 
-.timetable__row:hover {
-  background: var(--off);
-}
+  &__row {
+    padding-block: var(--space-4);
+    border-top: 1px solid var(--hairline);
+    text-decoration: none;
+    transition: background-color 180ms ease-out;
 
-.timetable__row:last-child {
-  border-bottom: 1px solid var(--hairline);
+    &:hover {
+      background: var(--off);
+    }
+
+    &:last-child {
+      border-bottom: 1px solid var(--hairline);
+    }
+  }
+
+  &__name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.45rem;
+    color: var(--navy);
+  }
+
+  &__sub {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+
+  &__go {
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sky);
+    white-space: nowrap;
+
+    @media (max-width: 639px) {
+      display: none;
+    }
+  }
 }
 
 .crest {
@@ -46,76 +77,59 @@
   padding: 4px;
 }
 
-.timetable__name {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.45rem;
-  color: var(--navy);
-}
-
-.timetable__sub {
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-}
-
-.timetable__go {
-  font-weight: 700;
-  font-size: 0.78rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--sky);
-  white-space: nowrap;
-}
-
 .index-cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(2rem, 5vw, 4rem);
   align-items: start;
-}
 
-.index-cols h3 {
-  margin-bottom: var(--space-3);
+  @media (max-width: 979px) {
+    grid-template-columns: 1fr;
+  }
+
+  h3 {
+    margin-bottom: var(--space-3);
+  }
 }
 
 .indexlist {
   border-top: 2px solid var(--navy);
-}
 
-.indexlist__row {
-  display: grid;
-  grid-template-columns: 1fr auto auto;
-  align-items: center;
-  gap: var(--space-3);
-  padding-block: 0.9rem;
-  border-bottom: 1px solid var(--hairline);
-  text-decoration: none;
-  transition: background-color 180ms ease-out;
-}
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: var(--space-3);
+    padding-block: 0.9rem;
+    border-bottom: 1px solid var(--hairline);
+    text-decoration: none;
+    transition: background-color 180ms ease-out;
 
-.indexlist__row:hover {
-  background: var(--off);
-}
+    &:hover {
+      background: var(--off);
+    }
+  }
 
-.indexlist__name {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.15rem;
-  color: var(--navy);
-}
+  &__name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--navy);
+  }
 
-.indexlist__sub {
-  font-size: 0.85rem;
-  color: var(--ink-soft);
-}
+  &__sub {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
 
-.indexlist__count {
-  justify-self: end;
-}
+  &__count {
+    justify-self: end;
+  }
 
-.indexlist__arrow {
-  color: var(--sky);
-  font-weight: 700;
+  &__arrow {
+    color: var(--sky);
+    font-weight: 700;
+  }
 }
 
 .para-note {

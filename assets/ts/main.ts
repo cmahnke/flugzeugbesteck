@@ -1,8 +1,8 @@
-/* Flugzeugbesteck — Interaktion.
-   Karussell, Besteckschublade (Öffnen beim Scrollen) und Mobilmenü.
-   Ohne JavaScript bleibt alles sichtbar und bedienbar: Die Schublade ist
-   serverseitig gerendert und vollständig aufgeklappt, das Karussell lässt
-   sich durch Wischen bedienen, die Navigation bleibt im Fluss. */
+/* Flugzeugbesteck — Interaction.
+   Carousel, cutlery drawer (opens on scroll) and mobile menu.
+   Without JavaScript everything stays visible and operable: the drawer is
+   server-rendered and fully expanded, the carousel can be used by swiping,
+   and the navigation stays in flow. */
 
 function initCarousels(): void {
   document.querySelectorAll<HTMLElement>("[data-carousel]").forEach((carousel) => {

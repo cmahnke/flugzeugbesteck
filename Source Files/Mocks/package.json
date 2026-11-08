@@ -3,7 +3,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint . -c eslint.config.mjs --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint . -c eslint.config.ts --report-unused-disable-directives --max-warnings 0",
     "stylelint": "stylelint '**/*.scss'",
     "format": "prettier . --check",
     "tsc": "tsc",
@@ -24,7 +24,6 @@
     "lottie-web": "^5.13.0",
     "marked": "^18.0.5",
     "motion": "^12.40.0",
-    "svgo": "4.0.1",
     "three": "^0.184.0"
   },
   "devDependencies": {

@@ -1,13 +1,10 @@
-import { resolve, join } from "node:path";
+import { resolve, join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
 import eslint from "vite-plugin-eslint";
 import stylelint from "vite-plugin-stylelint";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 import { NodePackageImporter } from "sass";
-import { optimize } from "svgo";
-
-import { fileURLToPath } from "node:url";
-import { dirname } from "node:path";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -22,12 +19,11 @@ export default defineConfig({
   plugins: [
     stylelint({ build: true, dev: false, lintOnStart: true }),
     viteStaticCopy({
+      watch: { reloadPageOnChange: true },
       targets: [
         {
-          src: resolve(__dirname, "../Images/logo.svg"),
-          dest: "assets",
-          transform: (content) => optimize(content.toString(), { multipass: true }).data,
-          watch: { reloadPage: true }
+          src: "images/*",
+          dest: ""
         }
       ]
     })
@@ -38,6 +34,13 @@ export default defineConfig({
     assetsInlineLimit: 0,
     commonjsOptions: { transformMixedEsModules: true },
     rollupOptions: {
+      input: {
+        main: resolve(__dirname, "index.html"),
+        home: resolve(__dirname, "home.html"),
+        collection: resolve(__dirname, "collection.html"),
+        detail: resolve(__dirname, "detail.html"),
+        about: resolve(__dirname, "about.html")
+      },
       output: {
         assetFileNames: `assets/[name].[ext]`
       }
@@ -58,7 +61,6 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        api: "modern-compiler",
         importers: [new NodePackageImporter()]
       }
     }
