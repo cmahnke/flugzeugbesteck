@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://flugzeugbesteck.projektemacher.org/categories/</loc>
+    <loc>https://flugzeugbesteck.projektemacher.org/airlines/</loc>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://flugzeugbesteck.projektemacher.org/en/categories/"
+                href="https://flugzeugbesteck.projektemacher.org/en/airlines/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://flugzeugbesteck.projektemacher.org/categories/"
+                href="https://flugzeugbesteck.projektemacher.org/airlines/"
                 />
   </url><url>
     <loc>https://flugzeugbesteck.projektemacher.org/</loc>
@@ -26,6 +26,32 @@
                 rel="alternate"
                 hreflang="de"
                 href="https://flugzeugbesteck.projektemacher.org/"
+                />
+  </url><url>
+    <loc>https://flugzeugbesteck.projektemacher.org/materials/</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://flugzeugbesteck.projektemacher.org/en/materials/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://flugzeugbesteck.projektemacher.org/materials/"
+                />
+  </url><url>
+    <loc>https://flugzeugbesteck.projektemacher.org/types/</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://flugzeugbesteck.projektemacher.org/en/types/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://flugzeugbesteck.projektemacher.org/types/"
                 />
   </url>
 </urlset>
