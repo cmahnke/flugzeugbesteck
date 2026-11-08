@@ -1,19 +1,16 @@
-@use "sass:color";
+/* Flugzeugbesteck — Zeitschriftengestaltung.
+   Portiert aus mocks/css/mock.css; Fonts kommen aus den lokalen
+   npm-fonts-Partials, das Design aus den design/-Modulen. */
 
-@use "footer" as *;
-/* Icons */
-@use "icons" as icons;
-/* Fonts */
 @use "npm-fonts/arimo-variable" as *;
 @use "npm-fonts/besley-variable" as *;
 
-@use "flags/flags" as *;
-
-$heading-font: "Besley", serif;
-$body-font: "Arimo", sans-serif;
-
-
-:root {
-  --heading-font: #{$heading-font};
-  --body-font: #{$body-font};
-}
+@use "design/tokens";
+@use "design/base";
+@use "design/utilities";
+@use "design/chrome";
+@use "design/components";
+@use "design/home";
+@use "design/collection";
+@use "design/record";
+@use "design/responsive";

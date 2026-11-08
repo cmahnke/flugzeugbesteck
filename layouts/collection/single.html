@@ -1,0 +1,70 @@
+{{ define "main" }}
+  <nav class="breadcrumb container" aria-label="{{ i18n "breadcrumbLabel" }}">
+    <a href="{{ site.Home.RelPermalink }}">{{ i18n "crumbHome" }}</a><span class="sep" aria-hidden="true">›</span>{{- with site.GetPage "/collection" -}}<a href="{{ .RelPermalink }}">{{ .Title }}</a><span class="sep" aria-hidden="true">›</span>{{- end -}}<span aria-current="page">{{ .Title }}</span>
+  </nav>
+
+  <section class="detail">
+    <div class="sheet">
+      <p class="kicker">{{ i18n "objektKicker" }} · {{ index .Params.airlines 0 }} · {{ i18n "gattLabel" }}: {{ index .Params.types 0 }}</p>
+      <h1 class="display">{{ .Title }}</h1>
+      {{ with .Description }}<p class="sheet__subtitle">{{ . }}</p>{{ end }}
+
+      {{ partial "drawer.html" . }}
+      <p class="small drawer__hint">{{ i18n "drawerHint" }}</p>
+
+      <dl class="sheet__table">
+        <div><dt>{{ i18n "fieldGesellschaft" }}</dt><dd><a href="{{ printf "/airlines/%s" (index .Params.airlines 0 | urlize) | relLangURL }}">{{ index .Params.airlines 0 }}</a></dd></div>
+        <div><dt>{{ i18n "fieldMuster" }}</dt><dd>{{ with .Params.muster }}{{ . }}{{ else }}{{ i18n "valueFollows" }}{{ end }}</dd></div>
+        <div><dt>{{ i18n "fieldGatt" }}</dt><dd><a href="{{ printf "/types/%s" (index .Params.types 0 | urlize) | relLangURL }}">{{ index .Params.types 0 }}</a></dd></div>
+        <div><dt>{{ i18n "fieldMaterial" }}</dt><dd><a href="{{ printf "/materials/%s" (index .Params.materials 0 | urlize) | relLangURL }}">{{ index .Params.materials 0 }}</a></dd></div>
+        <div><dt>{{ i18n "fieldMasze" }}</dt><dd>{{ with .Params.masze }}{{ . }}{{ else }}{{ i18n "valueFollows" }}{{ end }}</dd></div>
+        <div><dt>{{ i18n "fieldAera" }}</dt><dd>{{ .Params.aera }}</dd></div>
+        <div><dt>{{ i18n "fieldErwerb" }}</dt><dd>{{ with .Params.erwerb }}{{ . }}{{ else }}{{ i18n "valueFollows" }}{{ end }}</dd></div>
+        <div><dt>{{ i18n "fieldZustand" }}</dt><dd>{{ with .Params.zustand }}{{ . }}{{ else }}{{ i18n "valueFollows" }}{{ end }}</dd></div>
+        {{- with .Params.vermerk -}}
+        <div><dt>{{ i18n "noteLabel" }}</dt><dd>{{ . }}</dd></div>
+        {{- end -}}
+      </dl>
+
+      <p class="sheet__notice"><span class="chip chip--yellow">{{ i18n "sampleDataNotice" }}</span></p>
+      <p class="caps small">{{ i18n "objectNo" }}: {{ .Params.id }}</p>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="quicklinks">
+        {{- $tags := .GetTerms "tags" -}}
+        {{- if $tags -}}
+          <p class="caps quicklinks__label">{{ i18n "tagsLabel" }}</p>
+          {{- range $tags -}}
+            <a class="quicklink" href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{- end -}}
+        {{- end -}}
+        {{- with .PrevInSection -}}
+          <a class="quicklink" href="{{ .RelPermalink }}">{{ i18n "prevLabel" }} {{ .Title }}</a>
+        {{- end -}}
+        {{- with .NextInSection -}}
+          <a class="quicklink" href="{{ .RelPermalink }}">{{ i18n "nextLabel" }} {{ .Title }}</a>
+        {{- end -}}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <p class="kicker">{{ i18n "notesKicker" }}</p>
+          <h2 class="display">{{ i18n "notesHead" }}</h2>
+        </div>
+        <p class="caps small">{{ i18n "notesSide" }}</p>
+      </div>
+      <div class="prose">
+        {{ .Content }}
+      </div>
+    </div>
+  </section>
+
+  {{ partial "wave-strip.html" . }}
+{{ end }}

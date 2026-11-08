@@ -1,0 +1,14 @@
+{{- $lang := site.Language.Lang -}}
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "{{ .Permalink }}",
+  "type": "Collection",
+  "label": { "{{ $lang }}": [{{ .Title | jsonify }}] },
+  "items": [{{ range $i, $p := .Pages }}{{ if $i }},{{ end }}
+    {
+      "id": "{{ $p.Permalink }}",
+      "type": "Manifest",
+      "label": { "{{ $lang }}": [{{ $p.Title | jsonify }}] }
+    }{{ end }}
+  ]
+}

@@ -1,0 +1,63 @@
+{{ define "main" }}
+  <section class="pagehead">
+    <div class="container">
+      <p class="kicker">{{ i18n "colKicker" }}</p>
+      <h1 class="display pagehead__title">{{ .Title }}</h1>
+      {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+    </div>
+  </section>
+
+  {{ partial "wave-strip.html" . }}
+
+  <section class="section">
+    <div class="container">
+      {{- if .Content -}}
+        <div class="prose">{{ .Content }}</div>
+      {{- end -}}
+
+      {{- if eq .Kind "term" -}}
+        <div class="latest">
+          {{- range .Pages -}}
+            <a class="latest__row" href="{{ .RelPermalink }}">
+              <span class="latest__date">
+                <span class="latest__day">{{ .Date.Format "02" }}</span>
+                <span class="latest__month">{{ printf "%d %s" .Date.Year (i18n (printf "m%d" .Date.Month)) }}</span>
+              </span>
+              <span class="latest__main">
+                <span class="latest__title">{{ .Title }}</span>
+                <span class="latest__meta">{{ index .Params.airlines 0 }} · {{ index .Params.types 0 }} · {{ index .Params.materials 0 }}</span>
+              </span>
+              <span class="latest__side">
+                <span class="chip chip--outline">{{ index .Params.types 0 }}</span>
+              </span>
+            </a>
+          {{- end -}}
+        </div>
+      {{- else if eq .Kind "taxonomy" -}}
+        <div class="indexlist">
+          {{- range .Pages -}}
+            <a class="indexlist__row" href="{{ .RelPermalink }}">
+              <span><span class="indexlist__name">{{ .Title }}</span></span>
+              <span class="indexlist__count chip chip--outline">{{ len .Pages }} {{ if eq (len .Pages) 1 }}{{ i18n "recordSingular" }}{{ else }}{{ i18n "recordPlural" }}{{ end }}</span>
+              <span class="indexlist__arrow" aria-hidden="true">→</span>
+            </a>
+          {{- end -}}
+        </div>
+      {{- else -}}
+        <div class="latest">
+          {{- range .Pages -}}
+            <a class="latest__row" href="{{ .RelPermalink }}">
+              <span class="latest__date">
+                <span class="latest__day">{{ .Date.Format "02" }}</span>
+                <span class="latest__month">{{ printf "%d %s" .Date.Year (i18n (printf "m%d" .Date.Month)) }}</span>
+              </span>
+              <span class="latest__main">
+                <span class="latest__title">{{ .Title }}</span>
+              </span>
+            </a>
+          {{- end -}}
+        </div>
+      {{- end -}}
+    </div>
+  </section>
+{{ end }}

@@ -9,5 +9,10 @@ allowBuilds:
   puppeteer: true
   sharp: true
   tify: true
+  # headless-gl (transitive dep of three): native build not needed here
+  gl: false
+# Required by Hugo >= 0.161 (gohugoio/hugo#14852): pnpm >= 12 only reads this
+# from pnpm-workspace.yaml, not from .npmrc
+nodeLinker: hoisted
 blockExoticSubdeps: false
 ignoreScripts: false

@@ -1,0 +1,89 @@
+{{ define "main" }}
+  <section class="pagehead">
+    <div class="container">
+      <p class="kicker">{{ i18n "colKicker" }}</p>
+      <h1 class="display pagehead__title">{{ .Title }}</h1>
+      {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+    </div>
+  </section>
+
+  {{ partial "wave-strip.html" . }}
+
+  <section class="section section--tight" id="airlines">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <p class="kicker">{{ i18n "colKicker1" }}</p>
+          <h2 class="display">{{ i18n "colHead1" }}</h2>
+        </div>
+        <p class="caps small">{{ i18n "colSide1" }}</p>
+      </div>
+      <div class="timetable">
+        <div class="timetable__head">
+          <p class="caps">{{ i18n "colColEmblem" }}</p>
+          <p class="caps">{{ i18n "colColSociety" }}</p>
+          <p class="caps">{{ i18n "colColGo" }}</p>
+        </div>
+        {{- with site.GetPage "/airlines" -}}
+        {{- range .Pages -}}
+        {{- $tp := . -}}
+        {{- $count := len .Pages -}}
+        <a class="timetable__row" href="{{ .RelPermalink }}">
+          <span class="crest" role="img" aria-label="{{ i18n "crestPlaceholder" }}">{{ i18n "crestText" }}</span>
+          <span>
+            <span class="timetable__name">{{ .Title }}</span><br>
+            <span class="timetable__sub">{{ with .Params.land }}{{ . }}{{ end }}{{ with .Params.notiz }}{{ if $tp.Params.land }} · {{ end }}{{ . }}{{ end }}</span>
+          </span>
+          <span class="timetable__go">{{ $count }} {{ if eq $count 1 }}{{ i18n "recordSingular" }}{{ else }}{{ i18n "recordPlural" }}{{ end }} {{ i18n "showRecords" }}</span>
+        </a>
+        {{- end -}}
+        {{- end -}}
+      </div>
+      <p class="small para-note">{{ i18n "airlinesNote" }}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <p class="kicker">{{ i18n "colKicker2" }}</p>
+          <h2 class="display">{{ i18n "colHead2" }}</h2>
+        </div>
+        <p class="caps small">{{ i18n "colSide2" }}</p>
+      </div>
+      <div class="index-cols">
+        <div id="types">
+          <h3>{{ i18n "indexGatt" }}</h3>
+          <div class="indexlist">
+            {{- with site.GetPage "/types" -}}
+            {{- range .Pages -}}
+            <a class="indexlist__row" href="{{ .RelPermalink }}">
+              <span><span class="indexlist__name">{{ .Title }}</span><br>
+              <span class="indexlist__sub">{{ .Params.notiz }}</span></span>
+              <span class="indexlist__count chip chip--outline">{{ len .Pages }} {{ if eq (len .Pages) 1 }}{{ i18n "recordSingular" }}{{ else }}{{ i18n "recordPlural" }}{{ end }}</span>
+              <span class="indexlist__arrow" aria-hidden="true">→</span>
+            </a>
+            {{- end -}}
+            {{- end -}}
+          </div>
+        </div>
+        <div id="materials">
+          <h3>{{ i18n "indexMat" }}</h3>
+          <div class="indexlist">
+            {{- with site.GetPage "/materials" -}}
+            {{- range .Pages -}}
+            <a class="indexlist__row" href="{{ .RelPermalink }}">
+              <span><span class="indexlist__name">{{ .Title }}</span><br>
+              <span class="indexlist__sub">{{ .Params.notiz }}</span></span>
+              <span class="indexlist__count chip chip--outline">{{ len .Pages }} {{ if eq (len .Pages) 1 }}{{ i18n "recordSingular" }}{{ else }}{{ i18n "recordPlural" }}{{ end }}</span>
+              <span class="indexlist__arrow" aria-hidden="true">→</span>
+            </a>
+            {{- end -}}
+            {{- end -}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

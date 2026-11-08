@@ -1,0 +1,124 @@
+/* — Sammlung: Einstiege (Fahrplan und Registerlisten) — */
+
+.timetable__head,
+.timetable__row {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.timetable__head {
+  color: var(--ink-soft);
+  padding-bottom: var(--space-2);
+}
+
+.timetable__row {
+  padding-block: var(--space-4);
+  border-top: 1px solid var(--hairline);
+  text-decoration: none;
+  transition: background-color 180ms ease-out;
+}
+
+.timetable__row:hover {
+  background: var(--off);
+}
+
+.timetable__row:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.crest {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--grey);
+  background: var(--paper);
+  text-align: center;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  line-height: 1.3;
+  padding: 4px;
+}
+
+.timetable__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.45rem;
+  color: var(--navy);
+}
+
+.timetable__sub {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.timetable__go {
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sky);
+  white-space: nowrap;
+}
+
+.index-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.index-cols h3 {
+  margin-bottom: var(--space-3);
+}
+
+.indexlist {
+  border-top: 2px solid var(--navy);
+}
+
+.indexlist__row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: var(--space-3);
+  padding-block: 0.9rem;
+  border-bottom: 1px solid var(--hairline);
+  text-decoration: none;
+  transition: background-color 180ms ease-out;
+}
+
+.indexlist__row:hover {
+  background: var(--off);
+}
+
+.indexlist__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--navy);
+}
+
+.indexlist__sub {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.indexlist__count {
+  justify-self: end;
+}
+
+.indexlist__arrow {
+  color: var(--sky);
+  font-weight: 700;
+}
+
+.para-note {
+  margin-top: var(--space-3);
+  color: var(--ink-soft);
+}

@@ -1,0 +1,39 @@
+{{- $teile := .Params.teile | default slice -}}
+{{- $haben := 0 -}}
+{{- range $teile -}}{{- if .vorhanden -}}{{- $haben = add $haben 1 -}}{{- end -}}{{- end -}}
+{{- $lift := 0 -}}
+<div class="drawer" data-drawer aria-label="{{ i18n "drawerLabel" }}">
+  <div class="drawer__rail">
+    <span class="drawer__plate">{{ index .Params.airlines 0 }}</span>
+    <span class="drawer__pull" aria-hidden="true"></span>
+    <span class="drawer__rail-note">{{ $haben }} {{ i18n "ofParts" }} {{ len $teile }} {{ i18n "partsInStock" }}</span>
+  </div>
+  <div class="drawer__box dots-dark">
+    <div class="drawer__grid">
+      {{- range $i, $t := $teile -}}
+        {{- if $t.vorhanden -}}
+          {{- $lift = add $lift 1 -}}
+          {{- $liftI := sub $lift 1 -}}
+          <div class="drawer__slot drawer__slot--filled">
+            <span class="drawer__slot-no">{{ i18n "part" }} {{ add $i 1 }}</span>
+            <span class="drawer__slot-piece" style="--lift-i: {{ $liftI }}">
+              {{- with $t.bild -}}<img src="{{ . | relURL }}" alt="{{ $t.alt | default $t.name }}">{{- else -}}<span class="placeholder-photo drawer__ghost">{{ i18n "photoFollows" }}</span>{{- end -}}
+            </span>
+            <span class="drawer__slot-name">{{ $t.name }}</span>
+            <span class="drawer__state drawer__state--ok">● {{ i18n "inStock" }}</span>
+          </div>
+        {{- else -}}
+          <div class="drawer__slot drawer__slot--empty">
+            <span class="drawer__slot-no">{{ i18n "part" }} {{ add $i 1 }}</span>
+            <span class="drawer__slot-piece"><span class="drawer__void">{{ i18n "slotEmpty" }}</span></span>
+            <span class="drawer__slot-name">{{ $t.name }}</span>
+            <span class="drawer__state">○ {{ i18n "missing" }}</span>
+          </div>
+        {{- end -}}
+      {{- end -}}
+    </div>
+    {{- if and (gt (len $teile) 1) (lt $haben (len $teile)) -}}
+      <p class="drawer__note small">{{ i18n "drawerNote" }}</p>
+    {{- end -}}
+  </div>
+</div>

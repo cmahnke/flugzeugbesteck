@@ -1,0 +1,4 @@
+{{- $teile := .Params.teile | default slice -}}
+{{- $haben := 0 -}}
+{{- range $teile -}}{{- if .vorhanden -}}{{- $haben = add $haben 1 -}}{{- end -}}{{- end -}}
+<span class="caps">{{ if gt (len $teile) 1 }}{{ i18n "drawerOf" (dict "haben" $haben "total" (len $teile)) }}{{ else }}{{ i18n "singleComplete" }}{{ end }}</span>

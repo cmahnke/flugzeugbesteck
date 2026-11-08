@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Lang }}">
+<head>
+    <meta charset="utf-8">
+    <script>document.documentElement.classList.add("js")</script>
+    {{- partial "html/head/title.html" . -}}
+    <meta name="robots" content="all,follow">
+    <meta name="googlebot" content="index,follow,snippet,archive">
+    {{- partial "html/head/meta.html" . -}}
+    {{- partial "html/head/links.html" . -}}
+    {{- partial "html/head/style.html" (dict "context" . "css" "css/style.css") -}}
+    {{- partial "html/head/script.html" (dict "context" . "js" (partial "html/head/iiif-js.html" .)) -}}
+</head>
+<body>
+    <a class="skip" href="#main">{{ i18n "skipToContent" }}</a>
+
+    <header class="site-header">
+      <div class="container site-header__inner">
+        {{ partial "site-logo.html" . }}
+        {{ partial "site-nav.html" . }}
+      </div>
+    </header>
+
+    <main id="main">
+      {{ block "main" . }}{{ end }}
+      {{ block "content" . }}{{ end }}
+    </main>
+
+    {{ partial "site-footer.html" . }}
+</body>
+</html>

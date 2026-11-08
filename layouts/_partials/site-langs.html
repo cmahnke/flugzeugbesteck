@@ -1,0 +1,14 @@
+{{- $current := site.Language.Lang -}}
+{{- $langs := slice -}}
+{{- range .AllTranslations -}}{{- $langs = $langs | append .Language.Lang -}}{{- end -}}
+<p class="site-header__langs">
+  {{- range .AllTranslations -}}
+    {{- if eq .Language.Lang $current -}}
+      <span class="is-active" lang="{{ .Language.Lang }}">{{ .Language.Lang | upper }}</span>
+    {{- else -}}
+      <a href="{{ .RelPermalink }}" lang="{{ .Language.Lang }}" hreflang="{{ .Language.Lang }}">{{ .Language.Lang | upper }}</a>
+    {{- end -}}
+  {{- end -}}
+  {{- if not (in $langs "en") -}}<span class="sep" aria-hidden="true">/</span><span class="is-off" title="{{ i18n "langMissing" }}">EN</span>{{- end -}}
+  {{- if not (in $langs "de") -}}<span class="sep" aria-hidden="true">/</span><span class="is-off" title="{{ i18n "langMissing" }}">DE</span>{{- end -}}
+</p>

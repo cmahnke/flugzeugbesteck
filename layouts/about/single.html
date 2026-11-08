@@ -1,0 +1,88 @@
+{{ define "main" }}
+  <section class="pagehead">
+    <div class="container">
+      <p class="kicker">{{ i18n "aboutKicker" }}</p>
+      <h1 class="display pagehead__title">{{ .Title }}</h1>
+      {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+    </div>
+  </section>
+
+  {{ partial "wave-strip.html" . }}
+
+  <section class="section">
+    <div class="container editorial">
+      <div class="editorial__col prose">
+        {{ .Content }}
+      </div>
+      <aside class="editorial__aside">
+        <h3>{{ i18n "aboutAsideHead" }}</h3>
+        {{- range .Params.aside -}}
+        <p><strong>{{ .t }}:</strong> {{ .d }}</p>
+        {{- end -}}
+        <p class="small">{{ i18n "aboutContact" }}</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <p class="kicker">{{ i18n "statsKicker" }}</p>
+          <h2 class="display">{{ i18n "statsHead" }}</h2>
+        </div>
+        <p class="caps small">{{ i18n "statsSide" }}</p>
+      </div>
+      {{- $records := where site.RegularPages "Type" "collection" -}}
+      {{- $teile := 0 -}}
+      {{- $haben := 0 -}}
+      {{- range $records -}}
+        {{- range .Params.teile -}}
+          {{- $teile = add $teile 1 -}}
+          {{- if .vorhanden -}}{{- $haben = add $haben 1 -}}{{- end -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $ges := 0 -}}
+      {{- with site.GetPage "/airlines" -}}{{- $ges = len .Pages -}}{{- end -}}
+      {{- $gatt := 0 -}}
+      {{- with site.GetPage "/types" -}}{{- $gatt = len .Pages -}}{{- end -}}
+      <div class="statband">
+        <div class="statband__cell"><span class="statband__num">{{ len $records }}</span><span class="statband__label">{{ i18n "statRecords" }}</span></div>
+        <div class="statband__cell"><span class="statband__num">{{ $ges }}</span><span class="statband__label">{{ i18n "statAirlines" }}</span></div>
+        <div class="statband__cell"><span class="statband__num">{{ $gatt }}</span><span class="statband__label">{{ i18n "statGattungen" }}</span></div>
+        <div class="statband__cell"><span class="statband__num">{{ $haben }} / {{ $teile }}</span><span class="statband__label">{{ i18n "statTeile" }}</span></div>
+      </div>
+      <p class="small para-note">{{ i18n "statsNote" }}</p>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <p class="kicker">{{ i18n "kolophonKicker" }}</p>
+          <h2 class="display">{{ i18n "kolophonHead" }}</h2>
+        </div>
+        <p class="caps small">{{ with .Params.kolophonStand }}{{ . }}{{ else }}Stand: Entwurf 01{{ end }}</p>
+      </div>
+      <div class="index-cols">
+        <div>
+          <h3>{{ i18n "kolophonGestaltung" }}</h3>
+          <div class="notes">
+            <ul>
+              {{- range .Params.kolophonGestaltung -}}<li>{{ . }}</li>{{- end -}}
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h3>{{ i18n "kolophonWeiter" }}</h3>
+          <div class="notes">
+            <ul>
+              {{- range .Params.kolophonWeiter -}}<li>{{ . }}</li>{{- end -}}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

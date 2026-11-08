@@ -1,0 +1,21 @@
+<div class="site-header__group">
+  <button class="nav-toggle" type="button" aria-label="{{ i18n "menuLabel" }}" aria-expanded="false" aria-controls="site-nav">
+    <span class="nav-toggle__box" aria-hidden="true">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </span>
+  </button>
+  <div class="site-nav-panel" id="site-nav">
+    <nav class="nav" aria-label="{{ i18n "navLabel" }}">
+      {{- range site.Menus.main -}}
+        {{- $cur := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) -}}
+        {{- if and (not $cur) (eq .Identifier "sammlung") (in (slice "term" "taxonomy") $.Kind) -}}
+          {{- $cur = true -}}
+        {{- end -}}
+        <a href="{{ .URL | relLangURL }}"{{ if $cur }} aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{- end -}}
+    </nav>
+    {{ partial "site-langs.html" . }}
+  </div>
+</div>

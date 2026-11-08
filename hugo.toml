@@ -14,6 +14,13 @@ enableRobotsTXT = true
 
 [params]
   productionIIIFURLPrefix="https://flugzeugbesteck.projektemacher.org/"
+  slogan = "Alltagsgegenstand und Diebesgut: Besteck und Geschirr aus der Luftfahrt"
+
+[taxonomies]
+  airline = "airlines"
+  type = "types"
+  material = "materials"
+  tag = "tags"
 
 [languages]
   [languages.de]
@@ -29,11 +36,7 @@ enableRobotsTXT = true
         name = "Sammlung"
         weight = 2
         url = "collection/"
-
-      [[languages.de.menu.main]]
-        name = "Karte"
-        weight = 3
-        url = "map/"
+        identifier = "sammlung"
 
       [[languages.de.menu.main]]
         name = "Links"
@@ -58,32 +61,28 @@ enableRobotsTXT = true
       [[languages.en.menu.main]]
         name = "Start"
         weight = 1
-        url = "/en/"
+        url = "/"
 
       [[languages.en.menu.main]]
         name = "Collection"
         weight = 2
-        url = "en/collection/"
-
-      [[languages.en.menu.main]]
-        name = "Map"
-        weight = 3
-        url = "en/map/"
+        url = "collection/"
+        identifier = "sammlung"
 
       [[languages.en.menu.main]]
         name = "Links"
         weight = 3
-        url = "en/links/"
+        url = "links/"
 
       [[languages.en.menu.main]]
         name = "Search"
         weight = 4
-        url = "en/search/"
+        url = "search/"
 
       [[languages.en.menu.main]]
         name = "About"
         weight = 5
-        url = "en/about/"
+        url = "about/"
 
 [module]
     [[module.mounts]]

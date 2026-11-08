@@ -1,0 +1,141 @@
+{{ define "main" }}
+  <h1 class="visually-hidden">{{ site.Title }} — {{ site.Params.slogan }}</h1>
+
+  {{- $records := where site.RegularPages "Type" "collection" -}}
+  {{- $sammlung := site.GetPage "/collection" -}}
+
+  <section class="section" data-carousel aria-label="{{ i18n "featuredLabel" }}">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <p class="kicker">{{ i18n "featuredKicker" }}</p>
+          <h2 class="display">{{ i18n "featuredHead" }}</h2>
+        </div>
+        <div class="carousel__controls">
+          <p class="carousel__count caps" data-carousel-count aria-live="polite">01 / 03</p>
+        </div>
+      </div>
+      <div class="carousel__frame">
+        <button class="carousel__btn carousel__btn--prev" type="button" data-carousel-prev aria-label="{{ i18n "prevObject" }}">&#8592;</button>
+        <div class="carousel__viewport" tabindex="0" role="group" aria-roledescription="Karussell" aria-label="{{ i18n "carouselLabel" }}">
+          {{- $featured := where $records ".Params.featured" true | first 3 -}}
+          {{- range $i, $r := $featured -}}
+          <div class="carousel__slide" role="group" aria-roledescription="Folie" aria-label="{{ add $i 1 }} {{ i18n "of" }} {{ len $featured }}">
+            <div class="feature">
+              <div class="feature__figure">
+                <figure>
+                  <div class="figure-panel dots-paper">
+                    {{- $bild := "" -}}
+                    {{- $bildAlt := "" -}}
+                    {{- range $r.Params.teile -}}{{- if .bild -}}{{- $bild = .bild -}}{{- $bildAlt = .alt | default .name -}}{{- end -}}{{- end -}}
+                    {{- if $bild -}}
+                      <img src="{{ $bild | relURL }}" alt="{{ $bildAlt }}">
+                    {{- else -}}
+                      <div class="placeholder-photo">{{ i18n "photoFollows" }}</div>
+                    {{- end -}}
+                  </div>
+                  <figcaption class="figure-note small">Abb. {{ printf "%02d" (add $i 1) }} · {{ $r.Title }} · {{ i18n "photoFollows" }}</figcaption>
+                </figure>
+              </div>
+              <div class="feature__body">
+                <p class="caps">{{ i18n "featuredTag" }} · {{ $r.Title }}</p>
+                <h3 class="display feature__title">{{ $r.Title }} — {{ index $r.Params.airlines 0 }}</h3>
+                {{ with $r.Description }}<p class="lead">{{ . }}</p>{{ end }}
+                <div class="hero__meta">
+                  <span class="chip chip--yellow">{{ i18n "sampleData" }}</span>
+                  {{ partial "drawer-text.html" $r }}
+                  <span class="hero__meta-rule" aria-hidden="true"></span>
+                  <a class="btn btn--primary" href="{{ $r.RelPermalink }}">{{ i18n "toRecord" }}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{- end -}}
+        </div>
+        <button class="carousel__btn carousel__btn--next" type="button" data-carousel-next aria-label="{{ i18n "nextObject" }}">&#8594;</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <p class="kicker">{{ i18n "latestKicker" }}</p>
+          <h2 class="display">{{ i18n "latestHead" }}</h2>
+        </div>
+        <p class="caps small">{{ i18n "latestNote" }}</p>
+      </div>
+      <div class="latest">
+        {{- range first 5 (sort $records ".Date" "desc") -}}
+          <a class="latest__row" href="{{ .RelPermalink }}">
+            <span class="latest__date">
+              <span class="latest__day">{{ .Date.Format "02" }}</span>
+              <span class="latest__month">{{ printf "%d %s" .Date.Year (i18n (printf "m%d" .Date.Month)) }}</span>
+            </span>
+            <span class="latest__main">
+              <span class="latest__title">{{ .Title }}</span>
+              <span class="latest__meta">{{ index .Params.airlines 0 }} · {{ index .Params.types 0 }} · {{ index .Params.materials 0 }}</span>
+            </span>
+            <span class="latest__side">
+              <span class="chip chip--outline">{{ index .Params.types 0 }}</span>
+              {{ partial "drawer-text.html" . }}
+            </span>
+          </a>
+        {{- end -}}
+      </div>
+      {{- with $sammlung -}}
+      <a class="toc__more" href="{{ .RelPermalink }}">{{ i18n "moreLink" }}</a>
+      {{- end -}}
+    </div>
+  </section>
+
+  {{- with index (first 1 (sort $records ".Date" "desc")) 0 -}}
+  <section class="section">
+    <div class="container feature">
+      <div class="feature__figure">
+        <figure>
+          <div class="figure-panel dots-paper">
+            {{- $bild := "" -}}
+            {{- $bildAlt := "" -}}
+            {{- range .Params.teile -}}{{- if .bild -}}{{- $bild = .bild -}}{{- $bildAlt = .alt | default .name -}}{{- end -}}{{- end -}}
+            {{- if $bild -}}
+              <img src="{{ $bild | relURL }}" alt="{{ $bildAlt }}">
+            {{- else -}}
+              <div class="placeholder-photo">{{ i18n "photoFollows" }}</div>
+            {{- end -}}
+          </div>
+          <figcaption class="figure-note small">Abb. · {{ .Title }} · {{ i18n "photoFollows" }}</figcaption>
+        </figure>
+      </div>
+      <div class="feature__body">
+        <p class="caps">{{ i18n "featuredTag" }} · {{ i18n "currentKicker" }}</p>
+        <h2 class="display feature__title">{{ .Title }} — {{ index .Params.airlines 0 }}</h2>
+        {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+        <p>{{ .Summary }}</p>
+        <div class="hero__meta">
+          <span class="chip chip--yellow">{{ i18n "sampleData" }}</span>
+          {{ partial "drawer-text.html" . }}
+          <span class="hero__meta-rule" aria-hidden="true"></span>
+          <a class="btn btn--primary" href="{{ .RelPermalink }}">{{ i18n "toRecord" }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{- end -}}
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="quicklinks">
+        <p class="caps quicklinks__label">{{ i18n "entriesLabel" }}</p>
+        {{- with $sammlung -}}
+        <a class="quicklink" href="{{ .RelPermalink }}#airlines">{{ i18n "byAirline" }}</a>
+        <a class="quicklink" href="{{ .RelPermalink }}#types">{{ i18n "indexGatt" }}</a>
+        <a class="quicklink" href="{{ .RelPermalink }}#materials">{{ i18n "indexMat" }}</a>
+        {{- end -}}
+      </div>
+    </div>
+  </section>
+
+  {{ partial "wave-strip.html" . }}
+{{ end }}

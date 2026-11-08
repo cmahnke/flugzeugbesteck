@@ -1,0 +1,98 @@
+/* — Umbruchverhalten — */
+
+@media (max-width: 979px) {
+  .feature {
+    grid-template-columns: 1fr;
+  }
+
+  .index-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .editorial {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 639px) {
+  body {
+    font-size: 16px;
+  }
+
+  .site-header__logo img {
+    height: 40px;
+  }
+
+  .latest__row {
+    grid-template-columns: 3.6rem 1fr;
+  }
+
+  .latest__side {
+    display: none;
+  }
+
+  .timetable__head,
+  .timetable__row {
+    grid-template-columns: 56px 1fr;
+  }
+
+  .timetable__go {
+    display: none;
+  }
+
+  .sheet__table {
+    grid-template-columns: 1fr;
+  }
+
+  .sheet__table dt {
+    padding-bottom: 0;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .drawer__rail-note {
+    display: none;
+  }
+
+  .drawer__slot {
+    min-height: 176px;
+  }
+
+  .carousel__btn {
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 1rem;
+    box-shadow: 2px 2px 0 var(--signal);
+  }
+
+  .carousel__btn--prev {
+    left: 0.25rem;
+  }
+
+  .carousel__btn--next {
+    right: 0.25rem;
+  }
+
+  .carousel__slide {
+    padding: 0 6px 6px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

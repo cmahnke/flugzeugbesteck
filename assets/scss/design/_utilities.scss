@@ -1,0 +1,167 @@
+/* — Typografie und Druckerzeugnis-Werkzeuge — */
+
+.kicker {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sky);
+}
+
+.kicker--light {
+  color: var(--signal);
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.04;
+  letter-spacing: 0.01em;
+  color: var(--navy);
+}
+
+h2.display {
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  color: var(--navy);
+}
+
+.lead {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  max-width: 60ch;
+  color: var(--ink-soft);
+}
+
+.small {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.caps {
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.rule-double {
+  border: 0;
+  height: 0;
+  border-top: var(--rule-thick) solid var(--signal);
+  border-bottom: var(--rule-thin) solid var(--navy);
+  padding-top: 3px;
+}
+
+.rule-hair {
+  border: 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.dots-paper {
+  background-image: radial-gradient(rgba(0, 47, 108, 0.10) 1px, transparent 1.4px);
+  background-size: 9px 9px;
+}
+
+.dots-dark {
+  background-image: radial-gradient(rgba(0, 39, 82, 0.16) 1px, transparent 1.4px);
+  background-size: 9px 9px;
+}
+
+.chip {
+  display: inline-block;
+  background: var(--navy);
+  color: var(--paper);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.65rem;
+}
+
+.chip--outline {
+  background: transparent;
+  color: var(--navy);
+  border: 1px solid var(--navy);
+}
+
+.chip--yellow {
+  background: var(--signal);
+  color: var(--navy);
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.8rem 1.4rem;
+  border: 2px solid var(--navy);
+  transition: background-color 180ms ease-out, color 180ms ease-out;
+}
+
+.btn--primary {
+  background: var(--navy);
+  color: var(--paper);
+  box-shadow: 4px 4px 0 var(--signal);
+}
+
+.btn--primary:hover {
+  background: var(--sky);
+  color: var(--paper);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--navy);
+}
+
+.btn--secondary:hover {
+  background: var(--navy);
+  color: var(--paper);
+}
+
+.placeholder-photo {
+  border: 2px dashed var(--grey);
+  background: var(--off);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: var(--space-3);
+}
+
+.hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+  margin-top: var(--space-5);
+  color: var(--ink-soft);
+}
+
+.hero__meta .caps {
+  color: var(--sky);
+}
+
+.hero__meta-rule {
+  flex: 1;
+  min-width: 3rem;
+  height: 1px;
+  background: var(--hairline);
+}

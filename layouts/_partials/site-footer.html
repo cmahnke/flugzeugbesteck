@@ -1,0 +1,27 @@
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <div>
+      <h2>{{ site.Title }}</h2>
+      <p>{{ i18n "footerAbout" }}</p>
+    </div>
+    <div>
+      <h2>{{ i18n "footerColNav" }}</h2>
+      <ul>
+        {{- range site.Menus.main -}}
+        <li><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
+        {{- end -}}
+      </ul>
+    </div>
+    <div>
+      <h2>{{ i18n "footerColNotes" }}</h2>
+      <ul>
+        <li>{{ i18n "noteFonts" }}</li>
+        <li>{{ i18n "notePhotos" }}</li>
+        <li>{{ i18n "noteSamples" }}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container site-footer__bar">
+    <p>{{ i18n "footerBar" (dict "Year" (site.Params.copyrightYears | default "MMXXVI")) }}</p>
+  </div>
+</footer>

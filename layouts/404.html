@@ -1,0 +1,18 @@
+{{ define "main" }}
+  <section class="section">
+    <div class="container">
+      <div class="editorial">
+        <div>
+          <p class="kicker">404</p>
+          <h1 class="display">{{ i18n "notFoundHead" }}</h1>
+          <p class="lead">{{ i18n "notFoundText" }}</p>
+          <p><a class="btn btn--primary" href="{{ site.Home.RelPermalink }}">{{ i18n "notFoundHome" }}</a></p>
+        </div>
+        <aside class="prose">
+          <h2>{{ i18n "notFoundAside" }}</h2>
+          <p>{{ i18n "notFoundAsideText" }}</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+{{ end }}

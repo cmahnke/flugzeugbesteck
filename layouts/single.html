@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <section class="pagehead">
+    <div class="container">
+      <p class="kicker">{{ .Type | humanize }}</p>
+      <h1 class="display pagehead__title">{{ .Title }}</h1>
+      {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="prose">{{ .Content }}</div>
+    </div>
+  </section>
+
+  {{ partial "wave-strip.html" . }}
+{{ end }}
